@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FyS Aseo Industrial - Soluciones Integrales</title>
+    <meta name="description" content="FyS Aseo Industrial, empresa familiar dedicada a brindar soluciones integrales de aseo y mantención industrial.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-phone"></i> +34 671 92 38 96 (Ventas)
+                <a href="https://wa.me/34671923896?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20sus%20servicios" target="_blank" class="btn-whatsapp-small" title="Chatear por WhatsApp" style="background-color: #25D366; color: white; width: 24px; height: 24px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; text-decoration: none; transition: background-color 0.2s;">
+                    <i class="fa-brands fa-whatsapp" style="margin: 0; font-size: 0.85rem;"></i>
+                </a>
+            </span>
+            <span><i class="fa-solid fa-envelope"></i> fys.aseoindustrial@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- 2. Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="#" class="logo brand-logo">
+                <div class="logo-img-wrapper">
+                    <img src="img/FS_logo_azul_oscuro.png" alt="FyS Aseo Industrial Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">FyS</span>
+                    <span class="logo-subtitle">Aseo Industrial</span>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="#inicio">Inicio</a>
+                <div class="dropdown">
+                    <a href="#servicios" class="dropdown-toggle">Servicios <i class="fa-solid fa-chevron-down text-sm" style="margin-left: 2px;"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#servicios">Aseo Industrial</a></li>
+                        <li><a href="#servicios">Limpieza de Oficinas</a></li>
+                        <li><a href="#servicios">Mantención de Recintos</a></li>
+                        <li><a href="#servicios">Pisos y Alfombras</a></li>
+                        <li><a href="#servicios">Vidrios y Fachadas</a></li>
+                        <li><a href="#servicios">Sanitización</a></li>
+                    </ul>
+                </div>
+                <a href="#nosotros">Nosotros</a>
+                <a href="#contacto">Contacto</a>
+                <a href="#contacto" class="btn btn-primary d-mobile-only">¡Cotiza tu servicio!</a>
+            </nav>
+
+            <a href="#contacto" class="btn btn-primary d-desktop-only">¡Cotiza tu servicio!</a>
+        </div>
+    </header>
+
+    <!-- 3. Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="hero-overlay"></div>
+        <div class="container hero-content fade-in">
+            <h1>Soluciones integrales de aseo y mantención para tu empresa</h1>
+            <p>En FyS Aseo Industrial somos una empresa familiar comprometida con entregar espacios limpios, seguros y en óptimas condiciones. Trabajamos con valores, responsabilidad y dedicación en cada servicio.</p>
+            <a href="#contacto" class="btn btn-primary btn-large">Cotiza ahora <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+    </section>
+
+    <!-- 4. Diferenciadores -->
+    <section class="section bg-light" id="diferenciadores">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>¿Por qué elegir FyS?</h2>
+                <p>Somos más que una empresa de aseo: somos un equipo familiar que entiende que la confianza se construye con resultados reales y personas comprometidas.</p>
+            </div>
+            
+            <div class="grid-4 features-grid">
+                <div class="feature-card fade-in">
+                    <div class="icon-wrapper"><i class="fa-solid fa-house-chimney"></i></div>
+                    <h3>Empresa Familiar</h3>
+                    <p>Somos una empresa fundada sobre valores sólidos. Cada cliente es tratado con la misma dedicación que pondríamos en cuidar nuestra propia casa.</p>
+                </div>
+                <div class="feature-card fade-in" style="transition-delay: 100ms">
+                    <div class="icon-wrapper"><i class="fa-solid fa-wrench"></i></div>
+                    <h3>Equipamiento Profesional</h3>
+                    <p>Utilizamos maquinaria y productos de última generación que garantizan eficiencia y calidad en cada intervención.</p>
+                </div>
+                <div class="feature-card fade-in" style="transition-delay: 200ms">
+                    <div class="icon-wrapper"><i class="fa-solid fa-shield-halved"></i></div>
+                    <h3>Seguridad y Protocolo</h3>
+                    <p>Aplicamos estrictos protocolos de seguridad que protegen a tu equipo, tus instalaciones y al nuestro en cada faena.</p>
+                </div>
+                <div class="feature-card fade-in" style="transition-delay: 300ms">
+                    <div class="icon-wrapper"><i class="fa-solid fa-handshake"></i></div>
+                    <h3>Compromiso Real</h3>
+                    <p>Nos adaptamos a tus horarios y necesidades para no interrumpir tus operaciones. Tu productividad es nuestra prioridad.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Propuesta de Valor -->
+    <section class="section prop-valor pb-0" id="nosotros">
+        <div class="container text-center fade-in">
+            <h2 class="mb-gutter">Nuestra propuesta de valor</h2>
+            <div class="narrative-box">
+                <p class="lead-text">En FyS Aseo Industrial te ofrecemos soluciones integrales de limpieza y mantención diseñadas para acompañar el crecimiento de tu empresa. Nuestro compromiso es simple: <strong>espacios impecables, seguros y saludables</strong>, para que tú te enfoques en lo que realmente importa. Con personal capacitado, equipos modernos y una vocación familiar de servicio, garantizamos resultados visibles desde el primer día.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- 6. Equipo -->
+    <section class="section pb-2">
+        <div class="container text-center fade-in">
+            <h2 class="mb-gutter">Las personas detrás de FyS</h2>
+            <p class="mb-4 max-w-3xl mx-auto">Sabemos que la diferencia está en las personas. Nuestro equipo está formado por profesionales comprometidos, capacitados y motivados para dar lo mejor en cada espacio que tocamos. Liderados por <strong>Luis Aguilera Bucarey</strong>, trabajamos con orgullo, responsabilidad y el sello de una empresa de familia.</p>
+            
+            <div class="team-grid">
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?q=80&w=800&auto=format&fit=crop" alt="Trabajo en equipo">
+                </div>
+                <div class="team-member">
+                    <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?q=80&w=800&auto=format&fit=crop" alt="Profesionales">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 7. Servicios -->
+    <section class="section bg-light" id="servicios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Servicios que se adaptan a ti</h2>
+                <p>Diseñamos programas a medida para cada cliente, ejecutados en horarios que no afectan tu operación.</p>
+            </div>
+            
+            <div class="grid-3 services-grid">
+                <!-- Card 1 -->
+                <div class="service-card fade-in">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=800&auto=format&fit=crop" alt="Aseo Industrial">
+                    </div>
+                    <div class="service-content">
+                        <h3>Aseo Industrial</h3>
+                        <p>Limpieza profunda y especializada para plantas, bodegas y grandes recintos industriales con altos estándares de seguridad.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card fade-in" style="transition-delay: 100ms">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=800&auto=format&fit=crop" alt="Limpieza de Oficinas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Limpieza de Oficinas</h3>
+                        <p>Mantención diaria o periódica de espacios de trabajo para que tu equipo opere en ambientes limpios y ordenados.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card fade-in" style="transition-delay: 200ms">
+                    <div class="service-img">
+                        <img src="img/mantencion.png" alt="Mantención de Recintos">
+                    </div>
+                    <div class="service-content">
+                        <h3>Mantención de Recintos</h3>
+                        <p>Servicio integral de mantención de edificios, condominios y centros comerciales con personal especializado.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card fade-in">
+                    <div class="service-img">
+                        <img src="img/pisos.png" alt="Pisos y Alfombras">
+                    </div>
+                    <div class="service-content">
+                        <h3>Pisos y Alfombras</h3>
+                        <p>Lavado, pulido, cristalizado y mantención de todo tipo de pisos y superficies textiles.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card fade-in" style="transition-delay: 100ms">
+                    <div class="service-img">
+                        <img src="https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?q=80&w=800&auto=format&fit=crop" alt="Vidrios y Fachadas">
+                    </div>
+                    <div class="service-content">
+                        <h3>Vidrios y Fachadas</h3>
+                        <p>Limpieza en altura de vidrios y fachadas con equipos y protocolos de seguridad certificados.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card fade-in" style="transition-delay: 200ms">
+                    <div class="service-img">
+                        <img src="img/sanitizacion.png" alt="Sanitización">
+                    </div>
+                    <div class="service-content">
+                        <h3>Sanitización</h3>
+                        <p>Desinfección profunda de ambientes con productos homologados para garantizar espacios seguros y saludables.</p>
+                        <a href="#contacto" class="service-link">Solicitar servicio <i class="fa-solid fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 8. Logos Clientes -->
+    <section class="section py-3">
+        <div class="container text-center fade-in">
+            <h2 class="mb-4">Empresas que confían en FyS</h2>
+            <div class="clients-strip">
+                <div class="client-logo-wrapper" data-company="Teatro San Ginés" data-review="Teatro San Ginés confía en FyS para el aseo y mantención de sus instalaciones, asegurando un ambiente impecable para cada función y garantizando la mejor experiencia para su público.">
+                    <img src="img/logo/sangines.png" alt="Teatro San Ginés" class="client-logo logo-sangines">
+                </div>
+                <div class="client-logo-wrapper" data-company="JetSmart Airlines" data-review="JetSmart Airlines trabaja con FyS para el aseo industrial de sus espacios operativos y de atención al cliente, cumpliendo con los más altos estándares de higiene exigidos por la industria aérea.">
+                    <img src="img/logo/jetsmart.png" alt="JetSmart Airlines" class="client-logo logo-jetsmart">
+                </div>
+                <div class="client-logo-wrapper" data-company="Improvar" data-review="Improvar, distribuidor oficial de productos de construcción TOTAL, cuenta con FyS para el aseo y mantención de sus bodegas y puntos de venta, garantizando espacios ordenados y seguros para su operación diaria.">
+                    <img src="img/logo/improvar.png" alt="Improvar" class="client-logo logo-total">
+                </div>
+                <div class="client-logo-wrapper" data-company="Inmobiliaria Varela" data-review="Inmobiliaria Varela confía en FyS para el aseo profesional de sus propiedades y proyectos, entregando a sus clientes y arrendatarios espacios limpios y bien presentados en todo momento.">
+                    <img src="img/logo/varela.png" alt="Inmobiliaria Varela" class="client-logo logo-varela">
+                </div>
+            </div>
+            <p class="text-sm mt-3 text-muted">Haz clic en los logos para leer las reseñas de nuestros clientes.</p>
+        </div>
+    </section>
+
+    <!-- Modal Reseñas -->
+    <div id="review-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 id="modal-company-name">Nombre Empresa</h3>
+            <div class="modal-divider"></div>
+            <p id="modal-company-review">Reseña</p>
+        </div>
+    </div>
+
+    <!-- 9. Contacto -->
+    <section class="section bg-primary text-white" id="contacto">
+        <div class="container flex-row contact-container">
+            <div class="contact-info fade-in">
+                <h2 class="text-white">¿Te interesan nuestros servicios? Contáctanos</h2>
+                <p class="text-white-80">Cuéntanos sobre tu espacio y te enviaremos una propuesta personalizada sin costo.</p>
+                
+                <ul class="contact-list mt-4">
+                    <li><i class="fa-solid fa-phone"></i> +34 671 92 38 96</li>
+                    <li><i class="fa-solid fa-envelope"></i> fys.aseoindustrial@gmail.com</li>
+                    <li><i class="fa-solid fa-user-tie"></i> Luis Aguilera Bucarey</li>
+                </ul>
+                
+                <div class="mt-4">
+                    <a href="https://wa.me/34671923896?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20sus%20servicios" target="_blank" class="btn btn-whatsapp">
+                        <i class="fa-brands fa-whatsapp" style="font-size: 1.1em; margin-right: 5px;"></i> Chatear por WhatsApp
+                    </a>
+                </div>
+            </div>
+            <div class="contact-form-wrapper fade-in" style="transition-delay: 200ms">
+                <form id="contact-form" action="https://formspree.io/f/xlgaydpy" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Nombre completo *</label>
+                        <input type="text" id="name" name="name" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa / Organización</label>
+                        <input type="text" id="empresa" name="empresa" placeholder="Ej: Industrias XYZ">
+                    </div>
+                    <div class="grid-2 form-group">
+                        <div>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="correo@empresa.com">
+                        </div>
+                        <div>
+                            <label for="phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+56 9...">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="service">Servicio de interés</label>
+                        <select id="service" name="service" required>
+                            <option value="">Selecciona un servicio...</option>
+                            <option value="Aseo Industrial">Aseo Industrial</option>
+                            <option value="Limpieza Oficinas">Limpieza de Oficinas</option>
+                            <option value="Mantención">Mantención de Recintos</option>
+                            <option value="Pisos Alfombras">Pisos y Alfombras</option>
+                            <option value="Vidrios Fachadas">Vidrios y Fachadas</option>
+                            <option value="Sanitización">Sanitización</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje / Descripción del espacio</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Necesito limpieza para una bodega de 500m2..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">Enviar consulta <i class="fa-regular fa-paper-plane"></i></button>
+                    <div id="form-status" style="display: none; margin-top: 15px; padding: 15px; border-radius: 5px; text-align: center; font-weight: 500;"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 10. Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="img/FS_logo_azul_oscuro.png" alt="FyS Aseo Industrial Logo" class="footer-logo">
+                <p>Trabajamos con orgullo, responsabilidad y el sello de una empresa de familia.</p>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Acceso Rápido</h3>
+                <ul>
+                    <li><a href="#servicios">Aseo Industrial</a></li>
+                    <li><a href="#servicios">Limpieza de Oficinas</a></li>
+                    <li><a href="#servicios">Mantención de Recintos</a></li>
+                    <li><a href="#servicios">Pisos y Alfombras</a></li>
+                    <li><a href="#servicios">Vidrios y Fachadas</a></li>
+                    <li><a href="#servicios">Sanitización</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fa-solid fa-phone"></i> +34 671 92 38 96<br><span class="text-sm">(Luis Aguilera Bucarey)</span></p>
+                <p><i class="fa-solid fa-envelope"></i> fys.aseoindustrial@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 FyS Aseo Industrial — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+</html>
