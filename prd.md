@@ -1,4 +1,4 @@
-# PRD — Sitio Web: FyS Aseo Industrial
+# PRD — Sitio Web: F&S Aseo Industrial
 **Versión:** 1.0  
 **Fecha:** Abril 2026  
 **Destinatario:** Agente Antigravity  
@@ -7,7 +7,7 @@
 
 ## 1. Resumen del Proyecto
 
-Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS Aseo Industrial**, empresa familiar chilena de limpieza y mantención industrial. El sitio debe inspirarse en la estructura y funcionamiento de `pureclean.cl`, adaptando el contenido, identidad visual y tono a la marca FyS.
+Crear un sitio web de una sola página (o multi-sección con scroll) para **F&S Aseo Industrial**, empresa familiar chilena de limpieza y mantención industrial. El sitio debe inspirarse en la estructura y funcionamiento de `pureclean.cl`, adaptando el contenido, identidad visual y tono a la marca F&S.
 
 ---
 
@@ -15,7 +15,7 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 
 | Campo | Valor |
 |---|---|
-| **Nombre comercial** | FyS Aseo Industrial |
+| **Nombre comercial** | F&S Aseo Industrial |
 | **Tipo de empresa** | Empresa familiar de confianza y valores |
 | **Rubro** | Aseo industrial y mantención integral |
 | **Contacto principal** | Luis Aguilera Bucarey |
@@ -45,7 +45,7 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 |---|---|
 | **Paleta de colores** | Azul marino oscuro `#1B2A4A` (principal) + Teal/verde-azul `#3AAFA9` (acento) + Blanco `#FFFFFF` (fondos) + Gris claro `#F4F6F9` (fondos alternativos) |
 | **Tipografía** | Sans-serif moderna y limpia (e.g. Inter, Poppins o similar). Títulos bold. Cuerpo regular. |
-| **Logo FyS** | Usar el logo existente: círculo azul marino con "F&S" en teal, con estrellas destellantes. Fondo blanco o transparente. |
+| **Logo F&S** | Usar el logo existente: círculo azul marino con "F&S" en teal, con estrellas destellantes. Fondo blanco o transparente. |
 | **Estética general** | Profesional, limpio, corporativo pero accesible. Mucho espacio en blanco. Fotografías reales de trabajo industrial/limpieza. |
 | **Botones CTA** | Fondo teal `#3AAFA9`, texto blanco, bordes redondeados suaves |
 | **Cards de servicios** | Imagen superior + título + breve descripción + link. Sombra suave. Hover con elevación. |
@@ -67,7 +67,7 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 ```
 
 ### 4.2 Navbar
-- **Logo:** FyS Aseo Industrial (imagen provista)
+- **Logo:** F&S Aseo Industrial (imagen provista)
 - **Menú:** Inicio | Servicios ▼ | Nosotros | Contacto
 - **Dropdown Servicios:** Aseo Industrial | Limpieza de Oficinas | Mantención de Recintos | Pisos y Alfombras | Vidrios y Fachadas | Sanitización
 - **CTA:** Botón "¡Cotiza tu servicio!" (teal)
@@ -77,14 +77,14 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 > Soluciones integrales de aseo y mantención para tu empresa
 
 **Subtítulo:**
-> En FyS Aseo Industrial somos una empresa familiar comprometida con entregar espacios limpios, seguros y en óptimas condiciones. Trabajamos con valores, responsabilidad y dedicación en cada servicio.
+> En F&S Aseo Industrial somos una empresa familiar comprometida con entregar espacios limpios, seguros y en óptimas condiciones. Trabajamos con valores, responsabilidad y dedicación en cada servicio.
 
 **CTA:** `Cotiza ahora` → ancla al formulario de contacto
 
 **Fondo:** Imagen de ambiente industrial limpio o corredor corporativo (usar Unsplash/Pexels: industrial cleaning, office corridor, clean warehouse)
 
 ### 4.4 Sección "¿Qué nos diferencia?"
-**Título de sección:** ¿Por qué elegir FyS?
+**Título de sección:** ¿Por qué elegir F&S?
 
 **Subtítulo:**
 > Somos más que una empresa de aseo: somos un equipo familiar que entiende que la confianza se construye con resultados reales y personas comprometidas.
@@ -102,10 +102,10 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 **Título:** Nuestra propuesta de valor
 
 **Texto:**
-> En FyS Aseo Industrial te ofrecemos soluciones integrales de limpieza y mantención diseñadas para acompañar el crecimiento de tu empresa. Nuestro compromiso es simple: espacios impecables, seguros y saludables, para que tú te enfoques en lo que realmente importa. Con personal capacitado, equipos modernos y una vocación familiar de servicio, garantizamos resultados visibles desde el primer día.
+> En F&S Aseo Industrial te ofrecemos soluciones integrales de limpieza y mantención diseñadas para acompañar el crecimiento de tu empresa. Nuestro compromiso es simple: espacios impecables, seguros y saludables, para que tú te enfoques en lo que realmente importa. Con personal capacitado, equipos modernos y una vocación familiar de servicio, garantizamos resultados visibles desde el primer día.
 
 ### 4.6 Sección Equipo (opcional / simplificada)
-**Título:** Las personas detrás de FyS
+**Título:** Las personas detrás de F&S
 
 **Texto:**
 > Sabemos que la diferencia está en las personas. Nuestro equipo está formado por profesionales comprometidos, capacitados y motivados para dar lo mejor en cada espacio que tocamos. Liderados por **Luis Aguilera Bucarey**, trabajamos con orgullo, responsabilidad y el sello de una empresa de familia.
@@ -145,7 +145,7 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
    *(Foto: disinfection worker)*
 
 ### 4.8 Sección Clientes (Logos)
-**Título:** Empresas que confían en FyS
+**Título:** Empresas que confían en F&S
 
 *(Placeholder: 6–8 logos genéricos de industrias / o dejar espacio para que el cliente provea logos reales)*
 
@@ -170,7 +170,7 @@ Crear un sitio web de una sola página (o multi-sección con scroll) para **FyS 
 
 ### 4.10 Footer
 ```
-[Logo FyS]
+[Logo F&S]
 
 Acceso Rápido:
 Aseo Industrial | Limpieza de Oficinas | Mantención de Recintos | Pisos y Alfombras | Vidrios y Fachadas | Sanitización
@@ -179,7 +179,7 @@ Contacto:
 📞 +56 9 71 92 38 96 (Luis Aguilera Bucarey)
 ✉️ contacto@fysaseo.cl
 
-© 2026 FyS Aseo Industrial — Todos los derechos reservados.
+© 2026 F&S Aseo Industrial — Todos los derechos reservados.
 ```
 
 ---

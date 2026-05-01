@@ -455,7 +455,7 @@ img {
 }
 .client-logo-wrapper {
     width: 180px;
-    height: 80px;
+    height: 100px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -470,13 +470,13 @@ img {
     transition: all var(--transition-normal);
 }
 .client-logo.logo-total {
-    height: 50px;
+    height: 60px;
 }
 .client-logo.logo-sangines, .client-logo.logo-varela {
-    height: 70px;
+    height: 80px;
 }
 .client-logo.logo-jetsmart {
-    height: 55px;
+    height: 70px;
 }
 .client-logo-wrapper:hover .client-logo {
     filter: grayscale(0%) opacity(1);
