@@ -1,13 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Sticky Navbar
+    // 1. Smart Sticky Navbar
+    let lastScroll = 0;
     const navbar = document.getElementById('navbar');
+    const SCROLL_THRESHOLD = 10;
+
     window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            navbar.classList.add('scrolled');
-        } else {
-            navbar.classList.remove('scrolled');
+        const currentScroll = window.scrollY;
+        
+        if (currentScroll < 50) {
+            navbar.classList.remove('hidden', 'scrolled');
+            return;
         }
-    });
+        
+        navbar.classList.add('scrolled');
+        
+        if (Math.abs(currentScroll - lastScroll) < SCROLL_THRESHOLD) return;
+        
+        if (currentScroll > lastScroll) {
+            navbar.classList.add('hidden');    // Scrolling DOWN — esconder
+        } else {
+            navbar.classList.remove('hidden'); // Scrolling UP — mostrar
+        }
+        
+        lastScroll = currentScroll;
+    }, { passive: true });
 
     // 2. Mobile Menu Toggle
     const menuBtn = document.getElementById('mobile-menu-btn');
@@ -150,4 +166,43 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // 6. Parallax Suave
+    const parallaxElements = document.querySelectorAll('[data-parallax]');
+    let ticking = false;
+
+    window.addEventListener('scroll', () => {
+        if (!ticking) {
+            requestAnimationFrame(() => {
+                parallaxElements.forEach(el => {
+                    const speed = parseFloat(el.dataset.parallax) || 0.5;
+                    const scrolled = window.scrollY;
+                    el.style.transform = `translateY(${scrolled * speed}px)`;
+                });
+                ticking = false;
+            });
+            ticking = true;
+        }
+    }, { passive: true });
+
+    // 7. Active Menu Tracking
+    const sectionsElements = document.querySelectorAll('section[id], header[id]');
+    const navLinksArray = document.querySelectorAll('.nav-links a[href^="#"]');
+
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const id = entry.target.id;
+                navLinksArray.forEach(link => {
+                    if(link.getAttribute('href') === `#${id}`) {
+                        link.classList.add('active');
+                    } else {
+                        link.classList.remove('active');
+                    }
+                });
+            }
+        });
+    }, { threshold: 0.2, rootMargin: "-10% 0px -50% 0px" });
+
+    sectionsElements.forEach(s => sectionObserver.observe(s));
 });

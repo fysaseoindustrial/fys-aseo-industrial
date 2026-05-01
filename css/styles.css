@@ -169,10 +169,17 @@ img {
     position: sticky;
     top: 0;
     z-index: 1000;
-    transition: box-shadow var(--transition-fast);
+    transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94), background 0.3s ease, box-shadow 0.3s ease;
+    will-change: transform;
+}
+.navbar.hidden {
+    transform: translateY(-100%);
 }
 .navbar.scrolled {
     box-shadow: var(--shadow-md);
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
 }
 .nav-content {
     display: flex;
@@ -222,9 +229,20 @@ img {
     color: var(--color-text);
     font-weight: 500;
     font-family: var(--font-heading);
+    position: relative;
 }
-.nav-links a:hover {
+.nav-links a:hover, .nav-links a.active {
     color: var(--color-accent);
+}
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--color-accent);
+    border-radius: 2px;
 }
 .nav-links .btn {
     color: #fff;
@@ -287,9 +305,17 @@ img {
     min-height: 600px;
     display: flex;
     align-items: center;
+    overflow: hidden;
+}
+.hero-bg {
+    position: absolute;
+    top: -10%; left: -10%; right: -10%; bottom: -10%;
     background-image: url('../img/hero_bg.png');
     background-size: cover;
     background-position: center;
+    z-index: 0;
+    will-change: transform;
+    transform: translateZ(0);
 }
 .hero-overlay {
     position: absolute;
@@ -646,12 +672,24 @@ input:focus, select:focus, textarea:focus {
 /* ANIMATIONS */
 .fade-in {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+    transform: translateY(24px);
+    transition: opacity 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
 }
 .fade-in.visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .fade-in {
+        opacity: 1;
+        transform: none;
+        transition: none;
+        will-change: auto;
+    }
 }
 
 /* RESPONSIVE */
