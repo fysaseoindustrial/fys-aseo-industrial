@@ -192,9 +192,6 @@ img {
     gap: 12px;
 }
 .logo-img-wrapper {
-    border: 2px solid var(--color-accent);
-    border-radius: 50%;
-    padding: 4px;
     display: flex;
     justify-content: center;
     align-items: center;
