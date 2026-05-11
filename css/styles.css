@@ -324,14 +324,20 @@ img {
     position: relative;
     z-index: 2;
     color: #fff;
-    max-width: 700px;
+    max-width: 800px;
 }
 .hero h1 {
     color: #fff;
-    margin-bottom: 1.5rem;
+    font-size: 3.2rem;
+    line-height: 1.15;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 1.25rem;
 }
 .hero p {
-    font-size: 1.25rem;
+    font-size: 1.15rem;
+    line-height: 1.7;
+    font-weight: 400;
     margin-bottom: 2rem;
     color: rgba(255,255,255,0.9);
 }
@@ -504,40 +510,42 @@ img {
     stroke-linejoin: round;
 }
 .sd-title {
-    color: #2558a0;
+    color: #4da6ff; /* Lighter blue for better contrast against #1B2A4A */
     font-family: var(--font-heading);
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.05em;
     margin-bottom: 1rem;
     min-height: 40px;
     text-transform: uppercase;
+    line-height: 1.4;
 }
 .sd-desc {
-    color: #aaaaaa;
-    font-size: 12px;
-    line-height: 1.7;
+    color: #b0bec5;
+    font-size: 13px;
+    line-height: 1.6;
     margin-bottom: 2rem;
     flex-grow: 1;
 }
 .sd-desc-strong {
-    color: #eeeeee;
-    font-weight: 500;
+    color: #ffffff;
+    font-weight: 600;
 }
 .sd-btn {
-    border: 1px solid #2558a0;
-    color: #2558a0;
+    border: 1px solid #4da6ff;
+    color: #4da6ff;
     background: transparent;
-    font-size: 10px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    letter-spacing: 0.15em;
     text-transform: uppercase;
-    padding: 0.75rem 1.5rem;
+    padding: 0.8rem 1.5rem;
     cursor: pointer;
     font-weight: 600;
     transition: all var(--transition-fast);
     border-radius: 4px;
 }
 .sd-btn:hover {
-    background-color: #2558a0;
+    background-color: #4da6ff;
     color: #ffffff;
 }
 
@@ -766,7 +774,7 @@ input:focus, select:focus, textarea:focus {
 /* RESPONSIVE */
 @media (max-width: 991px) {
     .top-bar-content { justify-content: center; }
-    .hero h1 { font-size: 2rem; }
+    .hero h1 { font-size: 2.5rem; }
     .hero p { font-size: 1.1rem; }
     
     .sd-grid {
@@ -832,7 +840,8 @@ input:focus, select:focus, textarea:focus {
 }
 
 @media (max-width: 480px) {
-    .hero { height: auto; padding: 6rem 0 3rem 0; }
+    .hero { height: auto; padding: 7rem 0 4rem 0; }
+    .hero h1 { font-size: 2rem; }
     .narrative-box { padding: 2rem 1.5rem; }
     .narrative-box::before { left: 10px; font-size: 2rem; }
 }
