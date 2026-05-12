@@ -100,34 +100,37 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-                    formStatus.textContent = '¡Consulta enviada! Te contactaremos pronto.';
+                    formStatus.innerHTML = '<i class="fa-solid fa-circle-check"></i> ¡Cotización enviada con éxito! Nos contactaremos a la brevedad.';
                     formStatus.style.backgroundColor = '#d4edda';
                     formStatus.style.color = '#155724';
+                    formStatus.style.border = '1px solid #c3e6cb';
                     formStatus.style.display = 'block';
                 } else {
                     const data = await response.json();
                     if (Object.hasOwn(data, 'errors')) {
                         formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
                     } else {
-                        formStatus.textContent = 'Hubo un problema al enviar tu consulta. Inténtalo de nuevo.';
+                        formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Hubo un problema al enviar tu consulta. Inténtalo de nuevo.';
                     }
                     formStatus.style.backgroundColor = '#f8d7da';
                     formStatus.style.color = '#721c24';
+                    formStatus.style.border = '1px solid #f5c6cb';
                     formStatus.style.display = 'block';
                 }
             } catch (error) {
-                formStatus.textContent = 'Hubo un problema de conexión al enviar tu consulta.';
+                formStatus.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> Hubo un problema de conexión al enviar tu consulta.';
                 formStatus.style.backgroundColor = '#f8d7da';
                 formStatus.style.color = '#721c24';
+                formStatus.style.border = '1px solid #f5c6cb';
                 formStatus.style.display = 'block';
             } finally {
                 submitBtn.innerHTML = originalBtnText;
                 submitBtn.disabled = false;
                 
-                // Hide status message after 5 seconds
+                // Hide status message after 6 seconds
                 setTimeout(() => {
                     formStatus.style.display = 'none';
-                }, 5000);
+                }, 6000);
             }
         });
     }
@@ -208,8 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // 8. Servicios Destacados Interaction
     const sdButtons = document.querySelectorAll('.sd-btn');
-    const serviceSelect = document.getElementById('service');
-    const nameInput = document.getElementById('name');
+    const instalacionSelect = document.getElementById('instalacion');
+    const empresaInput = document.getElementById('empresa');
     
     sdButtons.forEach(btn => {
         btn.addEventListener('click', (e) => {
@@ -223,13 +226,19 @@ document.addEventListener('DOMContentLoaded', () => {
                 
                 // Set timeout to wait for scroll to finish approximately
                 setTimeout(() => {
-                    if (serviceSelect) {
-                        serviceSelect.value = targetService;
-                        // Dispatch event in case there are other listeners
-                        serviceSelect.dispatchEvent(new Event('change'));
+                    if (instalacionSelect) {
+                        // Mapear data-service antiguo a las nuevas opciones de instalacion si es posible
+                        let mapVal = 'Otro';
+                        if(targetService === 'Mantención') mapVal = 'Oficinas Corporativas';
+                        if(targetService === 'Pisos Alfombras') mapVal = 'Oficinas Corporativas';
+                        if(targetService === 'Aseo Industrial') mapVal = 'Galpón / Bodega';
+                        if(targetService === 'Sanitización') mapVal = 'Otro';
+                        
+                        instalacionSelect.value = mapVal;
+                        instalacionSelect.dispatchEvent(new Event('change'));
                     }
-                    if (nameInput) {
-                        nameInput.focus();
+                    if (empresaInput) {
+                        empresaInput.focus();
                     }
                 }, 800);
             }
