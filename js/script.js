@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-                    formStatus.textContent = '¡Mensaje enviado con éxito! Nos contactaremos a la brevedad.';
+                    formStatus.textContent = '¡Mensaje enviado con éxito! Nos pondremos en contacto bajo nuestros estándares de servicio 2026.';
                     formStatus.style.backgroundColor = '#d4edda';
                     formStatus.style.color = '#155724';
                     formStatus.style.display = 'block';

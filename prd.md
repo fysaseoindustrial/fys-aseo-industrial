@@ -247,12 +247,21 @@ Contacto:
 
 ---
 
-## 8. Tono de Comunicación
+## 8. Tono de Comunicación (GLOBAL CONSTRAINT - MANDATORY LANGUAGE RULE)
 
-- **Formal pero cercano:** hablar de "tú" al cliente
-- **Énfasis en valores familiares:** confianza, responsabilidad, compromiso
-- **Orientado a beneficios:** no hablar solo de "lo que hacemos" sino del impacto para el cliente
-- **Sin tecnicismos innecesarios:** lenguaje claro y directo
+**1. Lexical Requirements:**
+- **Zero English in UI:** Never leave labels like "Submit", "Quote", "Home", or "Services" in English. Use their professional Spanish equivalents: Solicitar Cotización, Cotizar Ahora, Inicio, Servicios Especializados.
+- **Tone:** Use a B2B Corporate tone. Avoid informal "tú" (unless specified); prioritize a professional, efficient, and trustworthy "usted" or neutral collective tone (e.g., "Nuestras soluciones").
+- **Industrial Context:** Use technical Spanish terminology appropriate for the industrial cleaning sector in Chile (e.g., Continuidad Operativa, Aseo de Fin de Obra, Gestión de Higiene).
+
+**2. Content Logic:**
+- If a prompt is given in English, you must translate the resulting web content into Spanish automatically before rendering the code.
+- Maintain clear syntax and avoid literal translations that sound "robotic".
+
+**3. Regional Alignment:**
+- The content must be localized for the Chilean market, specifically for B2B operations in areas like Peñalolén and the wider Metropolitan Region.
+
+*This rule is permanent and overrides any previous formatting instructions.*
 
 ---
 

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cotización Técnica - FyS Aseo Industrial</title>
+    <meta name="description" content="Complete los detalles de su instalación en Peñalolén o la Región Metropolitana para recibir una propuesta técnica personalizada.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap"
+        rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- 1. Top Bar -->
+    <div class="top-bar">
+        <div class="container top-bar-content">
+            <span style="display: inline-flex; align-items: center; gap: 8px;">
+                <i class="fa-solid fa-phone"></i> +34 671 92 38 96 (Ventas)
+                <a href="https://wa.me/34671923896?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20sus%20servicios"
+                    target="_blank" class="btn-whatsapp-small" title="Chatear por WhatsApp"
+                    style="background-color: #25D366; color: white; width: 24px; height: 24px; display: inline-flex; justify-content: center; align-items: center; border-radius: 50%; text-decoration: none; transition: background-color 0.2s;">
+                    <i class="fa-brands fa-whatsapp" style="margin: 0; font-size: 0.85rem;"></i>
+                </a>
+            </span>
+            <span><i class="fa-solid fa-envelope"></i> fys.aseoindustrial@gmail.com</span>
+        </div>
+    </div>
+
+    <!-- 2. Navbar -->
+    <header class="navbar" id="navbar">
+        <div class="container nav-content">
+            <a href="index.html" class="logo brand-logo">
+                <div class="logo-img-wrapper">
+                    <img src="img/FS_logo_azul_oscuro.png" alt="F&S Aseo Industrial Logo">
+                </div>
+                <div class="logo-text">
+                    <span class="logo-title">F&S</span>
+                    <span class="logo-subtitle">Aseo Industrial</span>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="mobile-menu-btn" aria-label="Abrir menú">
+                <i class="fa-solid fa-bars"></i>
+            </button>
+
+            <nav class="nav-links" id="nav-links">
+                <a href="index.html#inicio">Inicio</a>
+                <a href="index.html#servicios-especializados">Servicios Especializados</a>
+                <a href="cotizacion.html" class="active">Cotización</a>
+                <a href="index.html#soporte">Soporte</a>
+                <a href="cotizacion.html" class="btn btn-primary btn-cta d-mobile-only">Cotización</a>
+            </nav>
+
+            <a href="cotizacion.html" class="btn btn-primary btn-cta d-desktop-only">Cotización</a>
+        </div>
+    </header>
+
+    <!-- 3. Page Header -->
+    <section class="section bg-primary text-white pb-3" style="padding-top: 150px;">
+        <div class="container text-center fade-in">
+            <h1 class="text-white mb-3" style="font-size: 2.5rem;">Formulario de Cotización para Empresas</h1>
+            <p class="text-white-80 max-w-3xl mx-auto" style="font-size: 1.1rem;">Complete los detalles de su instalación en Peñalolén o la Región Metropolitana para recibir una propuesta técnica personalizada en menos de 24 horas.</p>
+        </div>
+    </section>
+
+    <!-- 4. Form Section -->
+    <section class="section bg-light py-5">
+        <div class="container">
+            <div class="contact-form-wrapper fade-in mx-auto" style="max-width: 800px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
+                <form id="contact-form" action="https://formspree.io/f/xlgaydpy" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="empresa">Nombre de Empresa *</label>
+                        <input type="text" id="empresa" name="empresa" required placeholder="Ej: Industrias XYZ">
+                    </div>
+                    <div class="grid-2 form-group">
+                        <div>
+                            <label for="instalacion">Tipo de Instalación *</label>
+                            <select id="instalacion" name="instalacion" required>
+                                <option value="">Selecciona una opción...</option>
+                                <option value="Bodega">Bodega</option>
+                                <option value="Oficina">Oficina</option>
+                                <option value="Planta Industrial">Planta Industrial</option>
+                                <option value="Obra">Obra</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="superficie">Superficie (m²) *</label>
+                            <input type="number" id="superficie" name="superficie" required placeholder="Ej: 500 m²">
+                        </div>
+                    </div>
+                    <div class="grid-2 form-group">
+                        <div>
+                            <label for="email">Email *</label>
+                            <input type="email" id="email" name="email" required placeholder="correo@empresa.com">
+                        </div>
+                        <div>
+                            <label for="phone">Teléfono *</label>
+                            <input type="tel" id="phone" name="phone" required placeholder="+56 9...">
+                        </div>
+                    </div>
+                    <div class="grid-2 form-group">
+                        <div>
+                            <label for="frecuencia">Frecuencia Estimada</label>
+                            <input type="text" id="frecuencia" name="frecuencia" placeholder="Ej: Diaria, Semanal, Una vez...">
+                        </div>
+                        <div>
+                            <label for="urgencia">Urgencia del Servicio</label>
+                            <select id="urgencia" name="urgencia" required>
+                                <option value="">Selecciona una opción...</option>
+                                <option value="Lo antes posible">Lo antes posible</option>
+                                <option value="Próximos 15 días">Próximos 15 días</option>
+                                <option value="Solo presupuesto">Solo presupuesto</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Mensaje / Detalles adicionales</label>
+                        <textarea id="message" name="message" rows="4"
+                            placeholder="Necesito limpieza profunda para..."></textarea>
+                    </div>
+                    
+                    <div class="mt-4 mb-4" style="background: rgba(0, 180, 216, 0.1); padding: 15px; border-radius: 8px; border-left: 4px solid var(--color-accent); font-size: 0.9rem;">
+                        <i class="fa-solid fa-shield-halved" style="color: var(--color-accent); margin-right: 5px;"></i>
+                        <strong>Sello de Seguridad:</strong> Cumplimos con todas las normativas de seguridad y salud ocupacional vigentes (2026).
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-block btn-cta" style="font-size: 1.1rem; padding: 15px;">Solicitar Cotización Técnica <i class="fa-regular fa-paper-plane"></i></button>
+                    <div id="form-status" style="display: none; margin-top: 15px; padding: 15px; border-radius: 5px; text-align: center; font-weight: 500;">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- 5. Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <div class="footer-brand">
+                <img src="img/FS_logo_azul_oscuro.png" alt="F&S Aseo Industrial Logo" class="footer-logo" loading="lazy">
+                <p>Trabajamos con orgullo, responsabilidad y el sello de una empresa de familia.</p>
+            </div>
+
+            <div class="footer-links">
+                <h3>Acceso Rápido</h3>
+                <ul>
+                    <li><a href="index.html#servicios-especializados">Aseo Industrial</a></li>
+                    <li><a href="index.html#servicios-especializados">Limpieza de Oficinas</a></li>
+                    <li><a href="index.html#servicios-especializados">Mantención de Recintos</a></li>
+                    <li><a href="index.html#servicios-especializados">Pisos y Alfombras</a></li>
+                    <li><a href="index.html#servicios-especializados">Vidrios y Fachadas</a></li>
+                    <li><a href="index.html#servicios-especializados">Sanitización</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contacto</h3>
+                <p><i class="fa-solid fa-phone"></i> +34 671 92 38 96</p>
+                <p><i class="fa-solid fa-envelope"></i> fys.aseoindustrial@gmail.com</p>
+                <p class="mt-3 text-white-80" style="font-size: 0.9rem;"><i class="fa-solid fa-location-dot"></i> Atención prioritaria en Peñalolén y comunas industriales de la Región Metropolitana.</p>
+            </div>
+        </div>
+        <div class="footer-bottom text-center">
+            <p>&copy; 2026 F&S Aseo Industrial — Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- FAB for Mobile -->
+    <a href="https://wa.me/34671923896?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20sus%20servicios" class="fab-mobile" title="Chatear por WhatsApp">
+        <i class="fa-brands fa-whatsapp"></i> Chatear
+    </a>
+
+    <!-- Script -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>

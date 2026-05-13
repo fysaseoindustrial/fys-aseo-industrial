@@ -130,6 +130,29 @@ img {
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(58, 175, 169, 0.4);
 }
+
+.btn-cta {
+    background-color: var(--color-accent);
+    color: var(--color-bg);
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+    border: 2px solid var(--color-accent);
+}
+.btn-cta:hover {
+    background-color: transparent;
+    color: var(--color-accent);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0, 180, 216, 0.5);
+}
+
+.btn-accent {
+    background-color: #fff;
+    color: var(--color-primary);
+}
+.btn-accent:hover {
+    background-color: var(--color-bg-alt);
+    color: var(--color-primary);
+}
+
 .btn-whatsapp {
     background-color: #25D366;
     color: #fff;
@@ -848,4 +871,34 @@ input:focus, select:focus, textarea:focus {
     .hero h1 { font-size: 2rem; }
     .narrative-box { padding: 2rem 1.5rem; }
     .narrative-box::before { left: 10px; font-size: 2rem; }
+}
+
+/* FAB MOBILE */
+.fab-mobile {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: var(--color-accent);
+    color: #fff;
+    padding: 15px 20px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+.fab-mobile:hover {
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+    color: #fff;
+}
+@media (min-width: 768px) {
+    .fab-mobile {
+        display: none;
+    }
 }
