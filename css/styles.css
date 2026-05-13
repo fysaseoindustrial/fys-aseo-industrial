@@ -1,9 +1,9 @@
 /* ROOT VARIABLES & RESET */
 :root {
   --color-primary:     #1B2A4A;   /* Azul marino oscuro */
-  --color-accent:      #3AAFA9;   /* Teal */
-  --color-accent-hover:#2b8a85;   /* Teal darker for hover */
-  --color-accent-light:#A8DADC;   /* Teal claro */
+  --color-accent:      #00B4D8;   /* Teal Vibrante / Industrial Blue */
+  --color-accent-hover:#0096B4;   /* Teal darker for hover */
+  --color-accent-light:#CAF0F8;   /* Teal claro */
   --color-bg:          #FFFFFF;   /* Fondo principal */
   --color-bg-alt:      #F4F6F9;   /* Fondo alternativo */
   --color-text:        #2D3748;   /* Texto principal */
@@ -104,7 +104,9 @@ img {
 
 /* BUTTONS */
 .btn {
-    display: inline-block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 0.75rem 1.5rem;
     border-radius: 8px;
     font-family: var(--font-heading);
@@ -114,6 +116,8 @@ img {
     transition: all var(--transition-fast);
     border: none;
     font-size: 1rem;
+    min-height: 44px;
+    min-width: 44px;
 }
 .btn-primary {
     background-color: var(--color-accent);

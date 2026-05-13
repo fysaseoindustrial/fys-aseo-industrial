@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (response.ok) {
                     contactForm.reset();
-                    formStatus.textContent = '¡Consulta enviada! Te contactaremos pronto.';
+                    formStatus.textContent = '¡Mensaje enviado con éxito! Nos contactaremos a la brevedad.';
                     formStatus.style.backgroundColor = '#d4edda';
                     formStatus.style.color = '#155724';
                     formStatus.style.display = 'block';
@@ -206,33 +206,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionsElements.forEach(s => sectionObserver.observe(s));
 
-    // 8. Servicios Destacados Interaction
-    const sdButtons = document.querySelectorAll('.sd-btn');
-    const serviceSelect = document.getElementById('service');
-    const nameInput = document.getElementById('name');
-    
-    sdButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const targetService = btn.getAttribute('data-service');
-            
-            const contactoSection = document.getElementById('contacto');
-            if (contactoSection) {
-                // Smooth scroll
-                contactoSection.scrollIntoView({ behavior: 'smooth' });
-                
-                // Set timeout to wait for scroll to finish approximately
-                setTimeout(() => {
-                    if (serviceSelect) {
-                        serviceSelect.value = targetService;
-                        // Dispatch event in case there are other listeners
-                        serviceSelect.dispatchEvent(new Event('change'));
-                    }
-                    if (nameInput) {
-                        nameInput.focus();
-                    }
-                }, 800);
-            }
-        });
-    });
 });
