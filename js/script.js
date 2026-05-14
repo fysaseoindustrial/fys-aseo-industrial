@@ -206,4 +206,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     sectionsElements.forEach(s => sectionObserver.observe(s));
 
+    // 8. URL Parameter Pre-fill for Cotización
+    const urlParams = new URLSearchParams(window.location.search);
+    const servicioParam = urlParams.get('servicio');
+    
+    if (servicioParam) {
+        const instalacionSelect = document.getElementById('instalacion');
+        if (instalacionSelect) {
+            // Check if the option exists
+            const optionExists = Array.from(instalacionSelect.options).some(opt => opt.value === servicioParam);
+            if (optionExists) {
+                instalacionSelect.value = servicioParam;
+                // Visual cue
+                instalacionSelect.style.border = '2px solid var(--color-accent)';
+                instalacionSelect.style.backgroundColor = 'rgba(0, 180, 216, 0.05)';
+                instalacionSelect.style.transition = 'all 0.3s ease';
+                
+                // Add a small check icon to the label if it exists
+                const label = document.querySelector('label[for="instalacion"]');
+                if (label) {
+                    label.innerHTML += ' <i class="fa-solid fa-circle-check" style="color: var(--color-accent); margin-left: 4px;" title="Servicio pre-seleccionado"></i>';
+                }
+            }
+        }
+    }
+
 });
