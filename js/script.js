@@ -76,7 +76,7 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.observe(el);
     });
 
-    // 4. Formspree Contact Form Submission
+    // 4. Netlify Forms Contact Form Submission
     const contactForm = document.getElementById('contact-form');
     const formStatus = document.getElementById('form-status');
 
@@ -90,12 +90,11 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.disabled = true;
 
             try {
-                const response = await fetch(contactForm.action, {
-                    method: contactForm.method,
-                    body: new FormData(contactForm),
-                    headers: {
-                        'Accept': 'application/json'
-                    }
+                const formData = new FormData(contactForm);
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
                 });
 
                 if (response.ok) {
@@ -105,12 +104,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     formStatus.style.color = '#155724';
                     formStatus.style.display = 'block';
                 } else {
-                    const data = await response.json();
-                    if (Object.hasOwn(data, 'errors')) {
-                        formStatus.textContent = data["errors"].map(error => error["message"]).join(", ");
-                    } else {
-                        formStatus.textContent = 'Hubo un problema al enviar tu consulta. Inténtalo de nuevo.';
-                    }
+                    formStatus.textContent = 'Hubo un problema al enviar tu consulta. Inténtalo de nuevo.';
                     formStatus.style.backgroundColor = '#f8d7da';
                     formStatus.style.color = '#721c24';
                     formStatus.style.display = 'block';

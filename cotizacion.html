@@ -74,7 +74,8 @@
     <section class="section bg-light py-5">
         <div class="container">
             <div class="contact-form-wrapper fade-in mx-auto" style="max-width: 800px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05);">
-                <form id="contact-form" action="https://formspree.io/f/xlgaydpy" method="POST" class="contact-form">
+                <form id="contact-form" name="cotizacion" method="POST" data-netlify="true" class="contact-form">
+                    <input type="hidden" name="form-name" value="cotizacion" />
                     <div class="form-group">
                         <label for="empresa">Nombre de Empresa *</label>
                         <input type="text" id="empresa" name="empresa" required placeholder="Ej: Industrias XYZ">
