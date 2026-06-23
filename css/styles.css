@@ -610,10 +610,10 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 6rem;
-    padding-right: 6rem; /* Ensures seamless gap spacing */
+    gap: 10rem;
+    padding-right: 10rem; /* Ensures seamless gap spacing */
     min-width: 100%;
-    animation: marquee-scroll 28s linear infinite;
+    animation: marquee-scroll 32s linear infinite;
 }
 @keyframes marquee-scroll {
     from {
@@ -630,7 +630,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 70px;
+    height: 90px;
     transition: transform var(--transition-fast);
 }
 .marquee-logo-link:hover {
@@ -647,13 +647,13 @@ img {
     filter: grayscale(0%) opacity(1);
 }
 .brand-logo.logo-improvar {
-    height: 55px;
+    height: 65px;
 }
 .brand-logo.logo-sangines {
-    height: 75px;
+    height: 95px;
 }
 .brand-logo.logo-jetsmart {
-    height: 50px;
+    height: 65px;
 }
 
 /* CONTACTO */
@@ -834,20 +834,20 @@ input:focus, select:focus, textarea:focus {
         padding: 0.75rem 0;
     }
     .marquee-group {
-        gap: 3rem;
-        padding-right: 3rem;
+        gap: 5rem;
+        padding-right: 5rem;
     }
     .marquee-logo-link {
-        height: 50px;
+        height: 65px;
     }
     .brand-logo.logo-improvar {
-        height: 40px;
+        height: 50px;
     }
     .brand-logo.logo-sangines {
-        height: 55px;
+        height: 70px;
     }
     .brand-logo.logo-jetsmart {
-        height: 35px;
+        height: 45px;
     }
     
     .sd-grid {
