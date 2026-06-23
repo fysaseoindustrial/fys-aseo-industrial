@@ -646,21 +646,16 @@ img {
 .marquee-logo-link:hover .brand-logo {
     filter: grayscale(0%) opacity(1);
 }
-.brand-logo.logo-coasin {
-    height: 62px;
+.brand-logo.logo-improvar {
+    height: 55px;
 }
-.brand-logo.logo-nutricion {
-    height: 40px;
+.brand-logo.logo-sangines {
+    height: 65px;
 }
-.brand-logo.logo-gemco {
-    height: 34px;
+.brand-logo.logo-jetsmart {
+    height: 45px;
 }
-.brand-logo.logo-tecnigen {
-    height: 42px;
-}
-.brand-logo.logo-kolff {
-    height: 38px;
-}
+
 
 
 /* CONTACTO */
@@ -847,21 +842,16 @@ input:focus, select:focus, textarea:focus {
     .marquee-logo-link {
         height: 65px;
     }
-    .brand-logo.logo-coasin {
-        height: 46px;
+    .brand-logo.logo-improvar {
+        height: 50px;
     }
-    .brand-logo.logo-nutricion {
-        height: 32px;
+    .brand-logo.logo-sangines {
+        height: 70px;
     }
-    .brand-logo.logo-gemco {
-        height: 26px;
+    .brand-logo.logo-jetsmart {
+        height: 45px;
     }
-    .brand-logo.logo-tecnigen {
-        height: 33px;
-    }
-    .brand-logo.logo-kolff {
-        height: 30px;
-    }
+
 
     
     .sd-grid {
