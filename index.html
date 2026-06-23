@@ -204,37 +204,79 @@
         </div>
     </section>
 
-    <!-- 5. Logos Clientes -->
-    <section class="section py-3">
+    <!-- 5. Logos Clientes (Carrusel) -->
+    <section class="section py-3 bg-light">
         <div class="container text-center fade-in">
             <h2 class="mb-4">Empresas que confían en F&S</h2>
-            <div class="clients-strip">
-                <div class="client-logo-wrapper" data-company="JetSmart Airlines"
-                    data-review="JetSmart Airlines trabaja con F&S para el aseo industrial de sus espacios operativos y de atención al cliente, cumpliendo con los más altos estándares de higiene exigidos por la industria aérea.">
-                    <img src="img/logo/jetsmart.png" alt="JetSmart Airlines" class="client-logo logo-jetsmart"
-                        loading="lazy">
+            
+            <div class="slider client-slider" id="client-slider">
+                <div class="slider-track-wrapper">
+                    <div class="slider-track" id="client-slider-track">
+                        <!-- Slide 1: JetSmart -->
+                        <div class="slide client-slide">
+                            <div class="client-card">
+                                <div class="client-logo-container">
+                                    <a href="https://www.jetsmart.com" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/logo/jetsmart.png" alt="JetSmart Airlines" class="client-logo logo-jetsmart">
+                                    </a>
+                                </div>
+                                <h3 class="client-name">JetSmart Airlines</h3>
+                                <blockquote class="client-quote">
+                                    "JetSmart Airlines trabaja con F&S para el aseo industrial de sus espacios operativos y de atención al cliente, cumpliendo con los más altos estándares de higiene exigidos por la industria aérea."
+                                </blockquote>
+                                <a href="https://www.jetsmart.com" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                                    Visitar Sitio Web <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 2: Improvar -->
+                        <div class="slide client-slide">
+                            <div class="client-card">
+                                <div class="client-logo-container">
+                                    <a href="https://www.improvar.cl" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/logo/improvar.png" alt="Improvar" class="client-logo logo-improvar">
+                                    </a>
+                                </div>
+                                <h3 class="client-name">Improvar</h3>
+                                <blockquote class="client-quote">
+                                    "Improvar, distribuidor oficial de productos de construcción TOTAL, cuenta con F&S para el aseo y mantención de sus bodegas y puntos de venta, garantizando espacios ordenados y seguros para su operación diaria."
+                                </blockquote>
+                                <a href="https://www.improvar.cl" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                                    Visitar Sitio Web <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Slide 3: Teatro San Ginés -->
+                        <div class="slide client-slide">
+                            <div class="client-card">
+                                <div class="client-logo-container">
+                                    <a href="https://sangines.cl" target="_blank" rel="noopener noreferrer">
+                                        <img src="img/logo/sangines.png" alt="Teatro San Ginés" class="client-logo logo-sangines">
+                                    </a>
+                                </div>
+                                <h3 class="client-name">Teatro San Ginés</h3>
+                                <blockquote class="client-quote">
+                                    "Teatro San Ginés confía en F&S para el aseo y mantención de sus instalaciones, asegurando un ambiente impecable para cada función y garantizando la mejor experiencia para su público."
+                                </blockquote>
+                                <a href="https://sangines.cl" target="_blank" rel="noopener noreferrer" class="btn-visit-site">
+                                    Visitar Sitio Web <i class="fa-solid fa-up-right-from-square"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="client-logo-wrapper" data-company="Improvar"
-                    data-review="Improvar, distribuidor oficial de productos de construcción TOTAL, cuenta con F&S para el aseo y mantención de sus bodegas y puntos de venta, garantizando espacios ordenados y seguros para su operación diaria.">
-                    <img src="img/logo/improvar.png" alt="Improvar" class="client-logo logo-improvar" loading="lazy">
-                </div>
-                <div class="client-logo-wrapper" data-company="Teatro San Ginés"
-                    data-review="Teatro San Ginés confía en F&S para el aseo y mantención de sus instalaciones, asegurando un ambiente impecable para cada función y garantizando la mejor experiencia para su público.">
-                    <img src="img/logo/sangines.png" alt="Teatro San Ginés" class="client-logo logo-sangines"
-                        loading="lazy">
-                </div>
+                
+                <!-- Controles del Slider -->
+                <button class="slider-btn prev" id="client-slider-prev" aria-label="Cliente anterior" disabled><i class="fa-solid fa-chevron-left"></i></button>
+                <button class="slider-btn next" id="client-slider-next" aria-label="Cliente siguiente"><i class="fa-solid fa-chevron-right"></i></button>
+                
+                <!-- Dots de Navegación -->
+                <div class="dots" id="client-slider-dots"></div>
             </div>
-    </section>
-
-    <!-- Modal Reseñas -->
-    <div id="review-modal" class="modal">
-        <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h3 id="modal-company-name">Nombre Empresa</h3>
-            <div class="modal-divider"></div>
-            <p id="modal-company-review">Reseña</p>
         </div>
-    </div>
+    </section>
 
     <!-- 6. Get Started CTA -->
     <section class="section bg-primary text-white text-center py-5">

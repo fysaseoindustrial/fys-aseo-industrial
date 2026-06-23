@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const SCROLL_THRESHOLD = 10;
 
     window.addEventListener('scroll', () => {
+        // Prevent hiding navbar on scroll when mobile menu is open
+        if (navLinks && navLinks.classList.contains('active')) return;
+        
         const currentScroll = window.scrollY;
         
         if (currentScroll < 50) {
@@ -126,39 +129,179 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 5. Client Review Modal
-    const modal = document.getElementById('review-modal');
-    const modalCompanyName = document.getElementById('modal-company-name');
-    const modalCompanyReview = document.getElementById('modal-company-review');
-    const closeModal = document.querySelector('.close-modal');
-    const clientLogos = document.querySelectorAll('.client-logo-wrapper');
-
-    if (modal && clientLogos.length > 0) {
-        clientLogos.forEach(logo => {
-            logo.addEventListener('click', () => {
-                const company = logo.getAttribute('data-company');
-                const review = logo.getAttribute('data-review');
-                
-                modalCompanyName.textContent = company;
-                modalCompanyReview.textContent = `"${review}"`;
-                
-                modal.classList.add('show');
+    // 5. Client Testimonial Carousel
+    class ClientSlider {
+        constructor(container) {
+            this.container = container;
+            this.track = container.querySelector('.slider-track');
+            this.slides = container.querySelectorAll('.slide');
+            this.dotsContainer = container.querySelector('.dots');
+            this.prevBtn = container.querySelector('.prev');
+            this.nextBtn = container.querySelector('.next');
+            this.current = 0;
+            this.total = this.slides.length;
+            
+            // Touch state
+            this.startX = 0;
+            this.currentX = 0;
+            this.isDragging = false;
+            this.threshold = 50; // px threshold for swipe
+            
+            this.init();
+        }
+        
+        init() {
+            if (this.total === 0) return;
+            
+            // Create navigation dots
+            this.createDots();
+            
+            // Touch events for mobile swipe
+            this.track.addEventListener('touchstart', e => this.onTouchStart(e), { passive: true });
+            this.track.addEventListener('touchmove', e => this.onTouchMove(e), { passive: false });
+            this.track.addEventListener('touchend', e => this.onTouchEnd(e));
+            
+            // Mouse drag for desktop dragging
+            this.track.addEventListener('mousedown', e => this.onMouseDown(e));
+            window.addEventListener('mousemove', e => this.onMouseMove(e));
+            window.addEventListener('mouseup', e => this.onMouseUp(e));
+            
+            // Button controls
+            if (this.prevBtn) {
+                this.prevBtn.addEventListener('click', () => this.prev());
+            }
+            if (this.nextBtn) {
+                this.nextBtn.addEventListener('click', () => this.next());
+            }
+            
+            // Keyboard accessibility
+            this.container.addEventListener('keydown', e => {
+                if (e.key === 'ArrowLeft') this.prev();
+                if (e.key === 'ArrowRight') this.next();
             });
-        });
-
-        // Close modal when clicking X
-        if (closeModal) {
-            closeModal.addEventListener('click', () => {
-                modal.classList.remove('show');
+            
+            // Initial render
+            this.go(0, false);
+        }
+        
+        createDots() {
+            if (!this.dotsContainer) return;
+            this.dotsContainer.innerHTML = '';
+            for (let i = 0; i < this.total; i++) {
+                const dot = document.createElement('button');
+                dot.className = 'dot';
+                dot.setAttribute('aria-label', `Ir al cliente ${i + 1}`);
+                dot.addEventListener('click', () => this.go(i));
+                this.dotsContainer.appendChild(dot);
+            }
+        }
+        
+        onTouchStart(e) {
+            this.startX = e.touches[0].clientX;
+            this.isDragging = true;
+            this.track.style.transition = 'none';
+        }
+        
+        onTouchMove(e) {
+            if (!this.isDragging) return;
+            this.currentX = e.touches[0].clientX;
+            const diff = this.currentX - this.startX;
+            const base = -this.current * 100;
+            
+            // Resistance at borders
+            const resistance = (this.current === 0 && diff > 0) || 
+                               (this.current === this.total - 1 && diff < 0) 
+                               ? 0.3 : 1;
+                               
+            this.track.style.transform = `translateX(calc(${base}% + ${diff * resistance}px))`;
+            
+            // Prevent vertical scroll if swipe is horizontal
+            if (Math.abs(diff) > 10) {
+                e.preventDefault();
+            }
+        }
+        
+        onTouchEnd(e) {
+            if (!this.isDragging) return;
+            this.isDragging = false;
+            const diff = this.currentX - this.startX;
+            
+            if (diff < -this.threshold) this.next();
+            else if (diff > this.threshold) this.prev();
+            else this.go(this.current);
+        }
+        
+        onMouseDown(e) {
+            if (e.button !== 0) return;
+            if (e.target.closest('a')) return;
+            
+            this.startX = e.clientX;
+            this.currentX = e.clientX;
+            this.isDragging = true;
+            this.track.style.transition = 'none';
+            this.track.style.cursor = 'grabbing';
+            e.preventDefault();
+        }
+        
+        onMouseMove(e) {
+            if (!this.isDragging) return;
+            this.currentX = e.clientX;
+            const diff = this.currentX - this.startX;
+            const base = -this.current * 100;
+            
+            // Resistance at borders
+            const resistance = (this.current === 0 && diff > 0) || 
+                               (this.current === this.total - 1 && diff < 0) 
+                               ? 0.3 : 1;
+                               
+            this.track.style.transform = `translateX(calc(${base}% + ${diff * resistance}px))`;
+        }
+        
+        onMouseUp(e) {
+            if (!this.isDragging) return;
+            this.isDragging = false;
+            this.track.style.cursor = '';
+            const diff = this.currentX - this.startX;
+            
+            if (diff < -this.threshold) this.next();
+            else if (diff > this.threshold) this.prev();
+            else this.go(this.current);
+        }
+        
+        go(index, animate = true) {
+            this.current = Math.max(0, Math.min(index, this.total - 1));
+            
+            if (animate) {
+                this.track.style.transition = 'transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94)';
+            } else {
+                this.track.style.transition = 'none';
+            }
+            
+            this.track.style.transform = `translateX(-${this.current * 100}%)`;
+            this.updateDots();
+            this.updateArrows();
+        }
+        
+        next() { this.go(this.current + 1); }
+        prev() { this.go(this.current - 1); }
+        
+        updateDots() {
+            const dots = this.dotsContainer ? this.dotsContainer.querySelectorAll('.dot') : [];
+            dots.forEach((dot, i) => {
+                dot.classList.toggle('active', i === this.current);
             });
         }
+        
+        updateArrows() {
+            if (this.prevBtn) this.prevBtn.disabled = this.current === 0;
+            if (this.nextBtn) this.nextBtn.disabled = this.current === this.total - 1;
+        }
+    }
 
-        // Close modal when clicking outside of it
-        window.addEventListener('click', (event) => {
-            if (event.target === modal) {
-                modal.classList.remove('show');
-            }
-        });
+    // Initialize client carousel
+    const clientSliderElement = document.getElementById('client-slider');
+    if (clientSliderElement) {
+        new ClientSlider(clientSliderElement);
     }
 
     // 6. Parallax Suave
@@ -224,5 +367,46 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
     }
+
+    // 9. Cookie Consent Banner (Dynamic Injection)
+    const initCookieBanner = () => {
+        if (localStorage.getItem('cookieConsent') === 'accepted') {
+            return;
+        }
+
+        const banner = document.createElement('div');
+        banner.id = 'cookie-banner';
+        banner.className = 'cookie-banner';
+        banner.innerHTML = `
+            <div class="cookie-banner-content">
+                <p>Utilizamos cookies propias y de terceros para mejorar su experiencia de navegación y analizar nuestro tráfico. Al hacer clic en "Aceptar", consiente el uso de todas las cookies.</p>
+                <div class="cookie-banner-buttons">
+                    <button class="btn btn-primary btn-cookie-accept" id="cookie-accept">Aceptar</button>
+                    <button class="btn btn-cookie-decline" id="cookie-decline">Rechazar</button>
+                </div>
+            </div>
+        `;
+
+        document.body.appendChild(banner);
+
+        // Fade in after a small delay
+        setTimeout(() => {
+            banner.classList.add('show');
+        }, 1000);
+
+        document.getElementById('cookie-accept').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'accepted');
+            banner.classList.remove('show');
+            setTimeout(() => banner.remove(), 400);
+        });
+
+        document.getElementById('cookie-decline').addEventListener('click', () => {
+            localStorage.setItem('cookieConsent', 'declined');
+            banner.classList.remove('show');
+            setTimeout(() => banner.remove(), 400);
+        });
+    };
+
+    initCookieBanner();
 
 });
