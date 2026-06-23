@@ -630,7 +630,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 90px;
+    height: 110px;
     transition: transform var(--transition-fast);
 }
 .marquee-logo-link:hover {
@@ -647,14 +647,15 @@ img {
     filter: grayscale(0%) opacity(1);
 }
 .brand-logo.logo-improvar {
-    height: 55px;
+    height: 75px;
 }
 .brand-logo.logo-sangines {
-    height: 65px;
+    height: 85px;
 }
 .brand-logo.logo-jetsmart {
-    height: 45px;
+    height: 60px;
 }
+
 
 
 
@@ -840,17 +841,18 @@ input:focus, select:focus, textarea:focus {
         padding-right: 3rem;
     }
     .marquee-logo-link {
-        height: 65px;
+        height: 85px;
     }
     .brand-logo.logo-improvar {
-        height: 50px;
+        height: 60px;
     }
     .brand-logo.logo-sangines {
-        height: 70px;
+        height: 75px;
     }
     .brand-logo.logo-jetsmart {
-        height: 45px;
+        height: 50px;
     }
+
 
 
     
