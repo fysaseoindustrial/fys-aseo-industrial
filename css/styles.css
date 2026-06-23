@@ -595,11 +595,11 @@ img {
 }
 .marquee-fade-left {
     left: 0;
-    background: linear-gradient(to right, var(--color-bg-alt) 0%, rgba(244, 246, 249, 0) 100%);
+    background: linear-gradient(to right, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .marquee-fade-right {
     right: 0;
-    background: linear-gradient(to left, var(--color-bg-alt) 0%, rgba(244, 246, 249, 0) 100%);
+    background: linear-gradient(to left, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
 }
 .marquee-track {
     display: flex;
@@ -610,8 +610,8 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-around;
-    gap: 10rem;
-    padding-right: 10rem; /* Ensures seamless gap spacing */
+    gap: 6rem;
+    padding-right: 6rem; /* Ensures seamless gap spacing */
     min-width: 100%;
     animation: marquee-scroll 32s linear infinite;
 }
@@ -640,21 +640,28 @@ img {
     width: auto;
     max-width: 100%;
     object-fit: contain;
-    filter: grayscale(100%) opacity(0.65);
-    transition: filter var(--transition-normal);
+    filter: grayscale(100%) opacity(0.85); /* Cleaner and more visible default state */
+    transition: filter var(--transition-normal), transform var(--transition-normal);
 }
 .marquee-logo-link:hover .brand-logo {
     filter: grayscale(0%) opacity(1);
 }
-.brand-logo.logo-improvar {
-    height: 65px;
+.brand-logo.logo-coasin {
+    height: 62px;
 }
-.brand-logo.logo-sangines {
-    height: 95px;
+.brand-logo.logo-nutricion {
+    height: 40px;
 }
-.brand-logo.logo-jetsmart {
-    height: 65px;
+.brand-logo.logo-gemco {
+    height: 34px;
 }
+.brand-logo.logo-tecnigen {
+    height: 42px;
+}
+.brand-logo.logo-kolff {
+    height: 38px;
+}
+
 
 /* CONTACTO */
 .flex-row {
@@ -834,21 +841,28 @@ input:focus, select:focus, textarea:focus {
         padding: 0.75rem 0;
     }
     .marquee-group {
-        gap: 5rem;
-        padding-right: 5rem;
+        gap: 3rem;
+        padding-right: 3rem;
     }
     .marquee-logo-link {
         height: 65px;
     }
-    .brand-logo.logo-improvar {
-        height: 50px;
+    .brand-logo.logo-coasin {
+        height: 46px;
     }
-    .brand-logo.logo-sangines {
-        height: 70px;
+    .brand-logo.logo-nutricion {
+        height: 32px;
     }
-    .brand-logo.logo-jetsmart {
-        height: 45px;
+    .brand-logo.logo-gemco {
+        height: 26px;
     }
+    .brand-logo.logo-tecnigen {
+        height: 33px;
+    }
+    .brand-logo.logo-kolff {
+        height: 30px;
+    }
+
     
     .sd-grid {
         grid-template-columns: 1fr;
