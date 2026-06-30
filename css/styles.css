@@ -1040,25 +1040,31 @@ input:focus, select:focus, textarea:focus {
     transform: translateY(-5px);
     box-shadow: var(--shadow-md);
 }
-.metric-number-wrapper {
+.metric-number {
+    display: block;
     font-size: 3.5rem;
     font-weight: 700;
     color: var(--color-accent);
     font-family: var(--font-heading);
-    line-height: 1;
-    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    margin-bottom: 0.75rem;
+    text-align: center;
 }
-.metric-number {
-    display: inline-block;
-}
-.metric-plus {
+.metric-title {
+    font-size: 1.25rem;
+    font-weight: 600;
     color: var(--color-primary);
-    margin-left: 2px;
+    margin-bottom: 0.5rem;
+    text-align: center;
+    font-family: var(--font-heading);
+    line-height: 1.3;
 }
-.metric-label {
-    font-size: 1.1rem;
+.metric-subtext {
+    font-size: 0.95rem;
     color: var(--color-text-light);
-    font-weight: 500;
+    line-height: 1.5;
+    text-align: center;
+    margin: 0;
 }
 
 /* BENTO GRID TESTIMONIALS */

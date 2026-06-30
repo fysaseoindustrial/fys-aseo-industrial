@@ -244,16 +244,17 @@ document.addEventListener('DOMContentLoaded', () => {
         
         const startCounting = (counter) => {
             const target = +counter.getAttribute('data-target');
+            const suffix = counter.getAttribute('data-suffix') || '';
             let count = 0;
             
             const updateCount = () => {
                 const increment = target / countSpeed;
                 if (count < target) {
                     count = Math.min(target, count + Math.ceil(increment));
-                    counter.innerText = count;
+                    counter.innerText = count + suffix;
                     setTimeout(updateCount, 10);
                 } else {
-                    counter.innerText = target;
+                    counter.innerText = target + suffix;
                 }
             };
             
