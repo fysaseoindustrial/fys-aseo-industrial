@@ -236,4 +236,194 @@ document.addEventListener('DOMContentLoaded', () => {
 
     initCookieBanner();
 
+    // 10. Animated counter for metrics
+    const metricSection = document.getElementById('metricas');
+    if (metricSection) {
+        const counters = metricSection.querySelectorAll('.metric-number');
+        const countSpeed = 200; // Velociadad del contador (más bajo = más rápido)
+        
+        const startCounting = (counter) => {
+            const target = +counter.getAttribute('data-target');
+            let count = 0;
+            
+            const updateCount = () => {
+                const increment = target / countSpeed;
+                if (count < target) {
+                    count = Math.min(target, count + Math.ceil(increment));
+                    counter.innerText = count;
+                    setTimeout(updateCount, 10);
+                } else {
+                    counter.innerText = target;
+                }
+            };
+            
+            updateCount();
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    counters.forEach(counter => startCounting(counter));
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.3 });
+
+        counterObserver.observe(metricSection);
+    }
+
+    // 11. Netlify Forms Fast Contact Form Submission
+    const fastForm = document.getElementById('fast-contact-form');
+    const fastStatus = document.getElementById('fast-form-status');
+
+    if (fastForm) {
+        fastForm.addEventListener('submit', async function(event) {
+            event.preventDefault();
+            
+            const submitBtn = fastForm.querySelector('button[type="submit"]');
+            const originalBtnText = submitBtn.innerHTML;
+            submitBtn.innerHTML = 'Enviando... <i class="fa-solid fa-spinner fa-spin"></i>';
+            submitBtn.disabled = true;
+
+            try {
+                const formData = new FormData(fastForm);
+                const response = await fetch('/', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: new URLSearchParams(formData).toString()
+                });
+
+                if (response.ok) {
+                    fastForm.reset();
+                    fastStatus.textContent = '¡Consulta enviada con éxito! Le responderemos a la brevedad.';
+                    fastStatus.style.backgroundColor = '#d4edda';
+                    fastStatus.style.color = '#155724';
+                    fastStatus.style.display = 'block';
+                } else {
+                    fastStatus.textContent = 'Hubo un problema al enviar su consulta. Intente nuevamente.';
+                    fastStatus.style.backgroundColor = '#f8d7da';
+                    fastStatus.style.color = '#721c24';
+                    fastStatus.style.display = 'block';
+                }
+            } catch (error) {
+                fastStatus.textContent = 'Hubo un problema de conexión al enviar su consulta.';
+                fastStatus.style.backgroundColor = '#f8d7da';
+                fastStatus.style.color = '#721c24';
+                fastStatus.style.display = 'block';
+            } finally {
+                submitBtn.innerHTML = originalBtnText;
+                submitBtn.disabled = false;
+                
+                setTimeout(() => {
+                    fastStatus.style.display = 'none';
+                }, 5000);
+            }
+        });
+    }
+
+    // 12. Floating WhatsApp Widget Bubble
+    const wspWidget = document.getElementById('wsp-widget');
+    const wspBubble = document.getElementById('wsp-bubble');
+    const wspCloseBubble = document.getElementById('wsp-close-bubble');
+
+    if (wspWidget && wspBubble) {
+        // Auto-show bubble after 4 seconds unless it was already closed in this session
+        if (!sessionStorage.getItem('wspBubbleClosed')) {
+            setTimeout(() => {
+                wspBubble.classList.add('show');
+            }, 4000);
+        }
+
+        if (wspCloseBubble) {
+            wspCloseBubble.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                wspBubble.classList.remove('show');
+                sessionStorage.setItem('wspBubbleClosed', 'true');
+            });
+        }
+    }
+
+    // 13. Smart Quote Calculator Logic
+    const serviceSelect = document.getElementById('instalacion');
+    const surfaceInput = document.getElementById('superficie');
+    const calcPlaceholder = document.getElementById('calc-placeholder');
+    const calcResults = document.getElementById('calc-results');
+    const valEquipo = document.getElementById('calc-val-equipo');
+    const valTiempo = document.getElementById('calc-val-tiempo');
+    const valMaquinaria = document.getElementById('calc-val-maquinaria');
+
+    if (serviceSelect && surfaceInput) {
+        const updateCalculator = () => {
+            const service = serviceSelect.value;
+            const surface = parseFloat(surfaceInput.value);
+
+            if (!service || !surface || isNaN(surface) || surface <= 0) {
+                calcResults.style.display = 'none';
+                calcPlaceholder.style.display = 'block';
+                return;
+            }
+
+            // Hide placeholder and show results
+            calcPlaceholder.style.display = 'none';
+            calcResults.style.display = 'block';
+
+            let equipo = '';
+            let tiempo = '';
+            let maquinaria = '';
+
+            // Estimaciones basadas en estándares técnicos
+            if (service === 'industrial') {
+                const operarios = Math.max(2, Math.ceil(surface / 400));
+                equipo = `${operarios} Operarios Técnicos + 1 Supervisor`;
+                const horas = Math.max(4, Math.ceil(surface / 150));
+                tiempo = `${horas} horas estimadas`;
+                maquinaria = surface > 800 ? 'Fregadora de hombre a bordo + Hidrolavadora trifásica' : 'Fregadora operador a pie + Aspiradora industrial de polvo/líquido';
+            } else if (service === 'oficinas') {
+                const auxiliar = Math.max(1, Math.ceil(surface / 300));
+                equipo = `${auxiliar} Auxiliar de Aseo`;
+                tiempo = surface > 600 ? 'Servicio diario continuo' : 'Jornada parcial (3-4 horas/día)';
+                maquinaria = 'Carro de aseo profesional + Aspiradora HEPA silenciosa';
+            } else if (service === 'fin-de-obra') {
+                const operarios = Math.max(3, Math.ceil(surface / 150));
+                equipo = `${operarios} Operarios Especializados + 1 Supervisor Directo`;
+                const horas = Math.max(6, Math.ceil(surface / 80));
+                tiempo = `${horas} horas (Jornada intensiva)`;
+                maquinaria = 'Aspiradora industrial HEPA + Fregadora mecánica Taski Ergodisc + Hidrolavadora de alta presión';
+            } else if (service === 'alfombras') {
+                const operarios = Math.max(1, Math.ceil(surface / 200));
+                equipo = `${operarios} Técnico en Tratamiento de Pisos`;
+                const horas = Math.max(3, Math.ceil(surface / 80));
+                tiempo = `${horas} horas de faena`;
+                maquinaria = 'Lava-alfombras por inyección/extracción + Secadores industriales de alta velocidad';
+            } else if (service === 'fachadas') {
+                const operarios = Math.max(2, Math.ceil(surface / 300));
+                equipo = `${operarios} Operarios Especialistas en Altura (Certificados)`;
+                const horas = Math.max(4, Math.ceil(surface / 100));
+                tiempo = `${horas} horas estimadas`;
+                maquinaria = 'Andamios certificados / Canastillo de elevación + Limpiacristales telescópicos y agua pura';
+            } else if (service === 'recintos') {
+                const operarios = Math.max(2, Math.ceil(surface / 500));
+                equipo = `${operarios} Operarios Multidisciplinarios`;
+                tiempo = 'Planes mensuales programados (Seguimiento continuo)';
+                maquinaria = 'Equipamiento menor de mantenimiento + Pulidora de pisos Taski';
+            } else {
+                equipo = 'A convenir según inspección';
+                tiempo = 'Evaluación técnica en terreno';
+                maquinaria = 'Equipamiento técnico a definir';
+            }
+
+            valEquipo.textContent = equipo;
+            valTiempo.textContent = tiempo;
+            valMaquinaria.textContent = maquinaria;
+        };
+
+        // Escuchar cambios
+        serviceSelect.addEventListener('change', updateCalculator);
+        surfaceInput.addEventListener('input', updateCalculator);
+
+        // Ejecutar inicialmente si ya viene pre-seleccionado
+        setTimeout(updateCalculator, 200);
+    }
+
 });

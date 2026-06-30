@@ -17,6 +17,41 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/styles.css">
+    <!-- Local Business Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HomeAndConstructionBusiness",
+      "name": "F&S Aseo Industrial",
+      "image": "https://www.fysaseo.cl/img/FS_logo_azul_oscuro.png",
+      "telephone": "+56971923896",
+      "email": "fys.aseoindustrial@gmail.com",
+      "url": "https://www.fysaseo.cl",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Peñalolén",
+        "addressRegion": "Metropolitana",
+        "addressCountry": "CL"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-33.4833",
+        "longitude": "-70.55"
+      },
+      "areaServed": [
+        {
+          "@type": "AdministrativeArea",
+          "name": "Peñalolén"
+        },
+        {
+          "@type": "AdministrativeArea",
+          "name": "Región Metropolitana"
+        }
+      ],
+      "description": "Empresa familiar chilena líder en soluciones integrales de aseo industrial, limpieza técnica de bodegas, alfombras y mantención de recintos corporativos.",
+      "sameAs": []
+    }
+    </script>
 </head>
 
 <body>
@@ -351,6 +386,32 @@
         </div>
     </section>
 
+    <!-- 8.5. Métricas y Estadísticas -->
+    <section class="section bg-light" id="metricas" style="padding: 4rem 0; border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+        <div class="container">
+            <div class="grid-3 text-center metrics-grid">
+                <div class="metric-card fade-in">
+                    <div class="metric-number-wrapper">
+                        <span class="metric-number" data-target="150">0</span><span class="metric-plus">+</span>
+                    </div>
+                    <p class="metric-label">Clientes Corporativos</p>
+                </div>
+                <div class="metric-card fade-in" style="transition-delay: 100ms">
+                    <div class="metric-number-wrapper">
+                        <span class="metric-number" data-target="100">0</span><span class="metric-plus">%</span>
+                    </div>
+                    <p class="metric-label">Continuidad Operativa</p>
+                </div>
+                <div class="metric-card fade-in" style="transition-delay: 200ms">
+                    <div class="metric-number-wrapper">
+                        <span class="metric-number" data-target="50">0</span><span class="metric-plus">+</span>
+                    </div>
+                    <p class="metric-label">Profesionales Capacitados</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- 9. Equipo -->
     <section class="section pb-2">
         <div class="container text-center fade-in">
@@ -367,6 +428,98 @@
                 <div class="team-member">
                     <img src="img/upholstery_cleaning.png" alt="Lavado profesional de tapices" loading="lazy">
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9.5. Testimoniales (Bento Grid) -->
+    <section class="section bg-light" id="testimonios">
+        <div class="container">
+            <div class="section-header fade-in">
+                <h2>Lo que dicen nuestros clientes</h2>
+                <p>La confianza de grandes marcas y recintos respalda nuestro compromiso de calidad.</p>
+            </div>
+            
+            <div class="bento-grid">
+                <!-- Tarjeta Grande (JetSmart) -->
+                <div class="bento-card bento-large fade-in">
+                    <div class="bento-header">
+                        <img src="img/logo/jetsmart.png" alt="Logo JetSmart" class="bento-logo logo-jetsmart-bento">
+                        <div class="bento-user">
+                            <h4>Gerencia de Operaciones Terrestres</h4>
+                            <span>JetSmart Airlines</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Cliente Verificado</span>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"El servicio de F&S Aseo Industrial ha sido clave para nuestra continuidad operativa en hangares y oficinas de soporte. Su capacidad de respuesta, apego estricto a las normas de seguridad y profesionalismo de su personal nos entregan total tranquilidad día a día."</p>
+                </div>
+                
+                <!-- Tarjeta Mediana (Improvar) -->
+                <div class="bento-card bento-medium fade-in" style="transition-delay: 100ms">
+                    <div class="bento-header">
+                        <img src="img/logo/improvar.png" alt="Logo Improvar" class="bento-logo logo-improvar-bento">
+                        <div class="bento-user">
+                            <h4>Supervisión de Proyectos</h4>
+                            <span>Improvar S.A.</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Cliente Verificado</span>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"Excelente desempeño en el aseo de fin de obra para nuestros desarrollos comerciales. La remoción de polvo fino y entrega a tiempo superó nuestras expectativas."</p>
+                </div>
+
+                <!-- Tarjeta Mediana (San Ginés) -->
+                <div class="bento-card bento-medium fade-in" style="transition-delay: 200ms">
+                    <div class="bento-header">
+                        <img src="img/logo/sangines.png" alt="Logo San Ginés" class="bento-logo logo-sangines-bento">
+                        <div class="bento-user">
+                            <h4>Dirección General</h4>
+                            <span>Teatro San Ginés</span>
+                        </div>
+                        <span class="verified-badge"><i class="fa-solid fa-circle-check"></i> Cliente Verificado</span>
+                    </div>
+                    <div class="stars">
+                        <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    </div>
+                    <p class="quote">"Destacamos su flexibilidad horaria y la profunda limpieza de alfombras y butacas de nuestro teatro. Un servicio de confianza con sello familiar."</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 9.7. Formulario de Contacto Rápido -->
+    <section class="section py-5" id="contacto-rapido" style="background: var(--color-bg); border-top: 1px solid var(--color-border);">
+        <div class="container" style="max-width: 600px;">
+            <div class="section-header fade-in" style="margin-bottom: 2rem;">
+                <h2>Contacto Rápido</h2>
+                <p>¿Tiene alguna duda o consulta express? Escríbanos y le responderemos a la brevedad.</p>
+            </div>
+            <div class="fade-in">
+                <form id="fast-contact-form" name="contacto-rapido" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="contact-form" style="padding: 2rem; background: var(--color-bg-alt); border: 1px solid var(--color-border); border-radius: 12px; box-shadow: var(--shadow-md);">
+                    <input type="hidden" name="form-name" value="contacto-rapido" />
+                    <p style="display: none;">
+                        <label>No completar: <input name="bot-field" /></label>
+                    </p>
+                    <div class="form-group">
+                        <label for="fast-nombre">Nombre Completo *</label>
+                        <input type="text" id="fast-nombre" name="nombre" required placeholder="Ej: Juan Pérez">
+                    </div>
+                    <div class="form-group">
+                        <label for="fast-email">Correo Electrónico o Teléfono *</label>
+                        <input type="text" id="fast-email" name="contacto" required placeholder="Ej: juan@correo.com o +56 9...">
+                    </div>
+                    <div class="form-group">
+                        <label for="fast-mensaje">Mensaje *</label>
+                        <textarea id="fast-mensaje" name="mensaje" rows="3" required placeholder="Escriba su consulta aquí..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block btn-cta">Enviar Consulta <i class="fa-regular fa-paper-plane"></i></button>
+                    <div id="fast-form-status" style="display: none; margin-top: 15px; padding: 15px; border-radius: 5px; text-align: center; font-weight: 500;"></div>
+                </form>
             </div>
         </div>
     </section>
@@ -411,6 +564,17 @@
     <a href="cotizacion.html" class="fab-mobile" title="Solicitar Cotización">
         <i class="fa-solid fa-file-invoice"></i> Cotizar
     </a>
+
+    <!-- Floating WhatsApp Widget -->
+    <div class="wsp-widget" id="wsp-widget">
+        <div class="wsp-bubble" id="wsp-bubble">
+            <span class="wsp-close" id="wsp-close-bubble">&times;</span>
+            <p>¿Necesita una cotización express? Escríbenos directamente.</p>
+        </div>
+        <a href="https://wa.me/34671923896?text=Hola,%20quiero%20hacer%20una%20consulta%20sobre%20sus%20servicios" target="_blank" rel="noopener noreferrer" class="wsp-button" aria-label="Chatear por WhatsApp">
+            <i class="fa-brands fa-whatsapp"></i>
+        </a>
+    </div>
 
     <!-- Script -->
     <script src="js/script.js"></script>
