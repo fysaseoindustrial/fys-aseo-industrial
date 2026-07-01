@@ -1348,3 +1348,166 @@ input:focus, select:focus, textarea:focus {
     }
 }
 
+/* HERO EXPRESS CONTACT WITH VIDEO BACKGROUND */
+#hero-express-contact {
+    position: relative;
+    overflow: hidden;
+    padding: 6rem 0;
+    width: 100%;
+    min-height: 580px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-primary);
+}
+.bg-video {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 1;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    pointer-events: none;
+}
+.video-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(15, 23, 42, 0.75) 0%, rgba(27, 42, 74, 0.65) 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+.form-content-container {
+    position: relative;
+    z-index: 3;
+    width: 90%;
+    max-width: 650px;
+    margin: 0 auto;
+}
+.express-form-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    border-radius: 18px;
+    padding: 3rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+}
+.express-form-card h2 {
+    color: #fff;
+    text-align: center;
+    margin-bottom: 0.5rem;
+    font-size: 2.25rem;
+    font-weight: 700;
+    font-family: var(--font-heading);
+}
+.express-form-card .subtitle {
+    color: rgba(255, 255, 255, 0.85);
+    text-align: center;
+    font-size: 1rem;
+    margin-bottom: 2rem;
+    line-height: 1.6;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.express-form .form-group {
+    margin-bottom: 1.5rem;
+}
+.express-form label {
+    color: rgba(255, 255, 255, 0.95);
+    font-size: 0.9rem;
+    font-weight: 500;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.express-form input,
+.express-form textarea {
+    background: rgba(255, 255, 255, 0.96);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--color-primary);
+    border-radius: 8px;
+    padding: 0.85rem 1rem;
+    width: 100%;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+    transition: all var(--transition-fast);
+}
+.express-form input:focus,
+.express-form textarea:focus {
+    outline: none;
+    border-color: #00B4D8;
+    box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.4);
+    background: #fff;
+}
+.btn-cyan {
+    width: 100%;
+    background-color: #00B4D8;
+    color: #fff;
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    box-shadow: 0 4px 15px rgba(0, 180, 216, 0.4);
+    transition: all var(--transition-fast);
+    position: relative;
+    overflow: hidden;
+}
+.btn-cyan:hover {
+    background-color: #0096B4;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 180, 216, 0.55);
+    color: #fff;
+}
+.btn-cyan i {
+    font-size: 0.95rem;
+    transition: transform var(--transition-fast);
+}
+.btn-cyan:hover i {
+    transform: translate(3px, -3px);
+}
+.btn-cyan::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -150%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(
+        to right,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.4) 50%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    transform: skewX(-25deg);
+    transition: none;
+}
+.btn-cyan:hover::after {
+    animation: btn-shine 0.85s ease-in-out;
+}
+
+@media (max-width: 576px) {
+    #hero-express-contact {
+        padding: 4rem 0;
+    }
+    .express-form-card {
+        padding: 1.75rem;
+    }
+    .express-form-card h2 {
+        font-size: 1.75rem;
+    }
+}
+
