@@ -116,16 +116,21 @@
 
     <!-- New Hero Express Contact Section (Video Background + Form) -->
     <section id="hero-express-contact">
-        <!-- Video Background Loop -->
-        <video autoplay muted loop playsinline preload="auto" disablePictureInPicture disableRemotePlayback controlslist="nodownload nofullscreen noremoteplayback" class="bg-video">
-            <source src="img/Video De Entrada liviano.mp4" type="video/mp4">
-        </video>
-        
         <!-- Dark Overlay for Readability -->
         <div class="video-overlay"></div>
         
-        <!-- Foreground Content -->
-        <div class="container form-content-container fade-in">
+        <!-- Main Container -->
+        <div class="container express-contact-container fade-in">
+            <!-- Left Column: Video Mockup (becomes full-screen background on mobile) -->
+            <div class="express-video-mockup">
+                <div class="phone-frame">
+                    <video autoplay muted loop playsinline preload="auto" disablePictureInPicture disableRemotePlayback controlslist="nodownload nofullscreen noremoteplayback" class="bg-video">
+                        <source src="img/Video De Entrada liviano.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            
+            <!-- Right Column: Contact Form -->
             <div class="express-form-card">
                 <h2>Contacto Rápido</h2>
                 <p class="subtitle">¿Tiene alguna duda o consulta express? Escríbenos y le responderemos a la brevedad.</p>
