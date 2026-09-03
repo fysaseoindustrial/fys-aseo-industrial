@@ -1,0 +1,14 @@
+[build]
+  publish = "."
+
+[[redirects]]
+  from = "http://fysaseoindustrial.cl/*"
+  to = "https://fysaseoindustrial.cl/:splat"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "https://www.fysaseoindustrial.cl/*"
+  to = "https://fysaseoindustrial.cl/:splat"
+  status = 301
+  force = true
