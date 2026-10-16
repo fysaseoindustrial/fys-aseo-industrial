@@ -1488,30 +1488,81 @@ input:focus, select:focus, textarea:focus {
 @media (min-width: 992px) {
     .express-contact-container {
         display: grid;
-        grid-template-columns: 1.1fr 0.9fr;
-        gap: 4rem;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: 3.5rem;
         align-items: center;
         width: 100%;
-        max-width: 1100px;
+        max-width: 1160px;
         margin: 0 auto;
         position: relative;
         z-index: 3;
     }
     .express-video-mockup {
         display: flex;
-        justify-content: center;
         align-items: center;
+        justify-content: space-between;
+        gap: 2.25rem;
         z-index: 3;
     }
+    .video-context-pitch {
+        display: block;
+        color: #fff;
+        max-width: 310px;
+    }
+    .video-context-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        background: rgba(0, 180, 216, 0.2);
+        border: 1px solid rgba(0, 180, 216, 0.5);
+        color: #CAF0F8;
+        font-size: 0.78rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.06em;
+        padding: 5px 12px;
+        border-radius: 50px;
+        margin-bottom: 1rem;
+    }
+    .video-context-pitch h3 {
+        color: #fff;
+        font-size: 1.65rem;
+        line-height: 1.25;
+        margin-bottom: 0.85rem;
+    }
+    .video-context-pitch p {
+        color: rgba(255, 255, 255, 0.85);
+        font-size: 0.95rem;
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+    .video-context-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .video-context-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        color: rgba(255, 255, 255, 0.92);
+        font-size: 0.9rem;
+        margin-bottom: 0.65rem;
+    }
+    .video-context-list li i {
+        color: #00B4D8;
+        margin-top: 4px;
+    }
     .phone-frame {
-        width: 280px;
-        height: 560px;
+        width: 260px;
+        height: 520px;
+        flex-shrink: 0;
         background: #0f172a;
-        border: 12px solid #334155;
-        border-radius: 38px;
+        border: 10px solid #334155;
+        border-radius: 36px;
         position: relative;
         overflow: hidden;
-        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.65);
     }
     .phone-frame::before {
         /* Speaker notch */
@@ -1543,6 +1594,9 @@ input:focus, select:focus, textarea:focus {
 
 /* 2. Mobile version (max-width: 991px) */
 @media (max-width: 991px) {
+    .video-context-pitch {
+        display: none;
+    }
     .express-contact-container {
         display: flex;
         flex-direction: column;
@@ -1594,56 +1648,58 @@ input:focus, select:focus, textarea:focus {
     }
 }
 .express-form-card {
-    background: rgba(255, 255, 255, 0.1);
+    background: rgba(15, 23, 42, 0.72);
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
-    border: 1px solid rgba(255, 255, 255, 0.18);
+    border: 1px solid rgba(255, 255, 255, 0.22);
     border-radius: 18px;
-    padding: 3rem;
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
+    padding: 2.5rem;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.45);
 }
 .express-form-card h2 {
     color: #fff;
     text-align: center;
     margin-bottom: 0.5rem;
-    font-size: 2.25rem;
+    font-size: 2rem;
     font-weight: 700;
     font-family: var(--font-heading);
 }
 .express-form-card .subtitle {
-    color: rgba(255, 255, 255, 0.85);
+    color: rgba(255, 255, 255, 0.88);
     text-align: center;
-    font-size: 1rem;
-    margin-bottom: 2rem;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    margin-bottom: 1.75rem;
+    line-height: 1.5;
     max-width: 480px;
     margin-left: auto;
     margin-right: auto;
 }
 .express-form .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
 }
 .express-form label {
     color: rgba(255, 255, 255, 0.95);
     font-size: 0.9rem;
     font-weight: 500;
     display: block;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.4rem;
 }
 .express-form input,
-.express-form textarea {
+.express-form textarea,
+.express-form select {
     background: rgba(255, 255, 255, 0.96);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.15);
     color: var(--color-primary);
     border-radius: 8px;
-    padding: 0.85rem 1rem;
+    padding: 0.8rem 1rem;
     width: 100%;
-    font-size: 0.95rem;
+    font-size: 16px; /* Previene auto-zoom molesto en iOS Safari */
     font-family: var(--font-body);
     transition: all var(--transition-fast);
 }
 .express-form input:focus,
-.express-form textarea:focus {
+.express-form textarea:focus,
+.express-form select:focus {
     outline: none;
     border-color: #00B4D8;
     box-shadow: 0 0 0 3px rgba(0, 180, 216, 0.4);
@@ -1655,7 +1711,7 @@ input:focus, select:focus, textarea:focus {
     color: #fff;
     font-family: var(--font-heading);
     font-weight: 600;
-    font-size: 1.1rem;
+    font-size: 1.05rem;
     padding: 1rem;
     border-radius: 8px;
     border: none;
@@ -1704,13 +1760,275 @@ input:focus, select:focus, textarea:focus {
 
 @media (max-width: 576px) {
     #hero-express-contact {
-        padding: 4rem 0;
+        padding: 3.5rem 0;
     }
     .express-form-card {
-        padding: 1.75rem;
+        padding: 1.5rem;
     }
     .express-form-card h2 {
-        font-size: 1.75rem;
+        font-size: 1.65rem;
     }
 }
+
+/* ==========================================
+   OPTIMIZACIÓN B2B, CONFIANZA Y MOBILE UX
+   ========================================== */
+
+/* Hero Badges & Dual CTA */
+.hero-badge-top {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(0, 180, 216, 0.18);
+    border: 1px solid rgba(0, 180, 216, 0.45);
+    color: #CAF0F8;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 1.25rem;
+}
+.hero-cta-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.75rem;
+}
+.hero-trust-pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.15);
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+.hero-trust-pills span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+}
+.hero-trust-pills i {
+    color: var(--color-accent);
+}
+
+/* B2B Legal & Operational Compliance Strip */
+.b2b-compliance-strip {
+    background: var(--color-primary);
+    color: #fff;
+    padding: 2.25rem 0;
+    border-bottom: 3px solid var(--color-accent);
+}
+.compliance-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem;
+    align-items: start;
+}
+.compliance-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 14px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.15rem;
+    border-radius: 10px;
+}
+.compliance-item i {
+    font-size: 1.6rem;
+    color: var(--color-accent);
+    margin-top: 2px;
+    flex-shrink: 0;
+}
+.compliance-item h4 {
+    color: #fff;
+    font-size: 0.98rem;
+    margin-bottom: 0.25rem;
+    font-weight: 600;
+}
+.compliance-item p {
+    color: rgba(255, 255, 255, 0.78);
+    font-size: 0.85rem;
+    line-height: 1.45;
+    margin: 0;
+}
+
+/* Leadership & Supervision Card */
+.leadership-card {
+    background: #fff;
+    border-radius: 16px;
+    border: 1px solid var(--color-border);
+    box-shadow: var(--shadow-md);
+    padding: 2.5rem;
+    max-width: 920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    gap: 2.5rem;
+    align-items: center;
+    text-align: left;
+}
+.leadership-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(0, 180, 216, 0.1);
+    color: var(--color-accent-hover);
+    font-weight: 600;
+    font-size: 0.82rem;
+    padding: 4px 12px;
+    border-radius: 50px;
+    margin-bottom: 0.75rem;
+}
+.leadership-info h3 {
+    font-size: 1.5rem;
+    color: var(--color-primary);
+    margin-bottom: 0.75rem;
+}
+.leadership-info p {
+    color: var(--color-text);
+    font-size: 0.98rem;
+    line-height: 1.65;
+    margin-bottom: 1rem;
+}
+.leadership-guarantees {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+    margin-top: 1.25rem;
+}
+.leadership-guarantees div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.88rem;
+    font-weight: 600;
+    color: var(--color-primary);
+}
+.leadership-guarantees i {
+    color: var(--color-accent);
+}
+.leadership-cta-box {
+    background: var(--color-bg-alt);
+    border-radius: 12px;
+    padding: 1.75rem;
+    text-align: center;
+    border: 1px solid var(--color-border);
+}
+.leadership-avatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    background: var(--color-primary);
+    color: var(--color-accent);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin: 0 auto 1rem auto;
+}
+
+/* FAQ Accordion B2B */
+.faq-container {
+    max-width: 860px;
+    margin: 0 auto;
+}
+.faq-item {
+    background: #fff;
+    border: 1px solid var(--color-border);
+    border-radius: 10px;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    transition: box-shadow var(--transition-fast), border-color var(--transition-fast);
+}
+.faq-item.active {
+    border-color: var(--color-accent);
+    box-shadow: var(--shadow-sm);
+}
+.faq-question {
+    width: 100%;
+    background: none;
+    border: none;
+    padding: 1.25rem 1.5rem;
+    text-align: left;
+    font-family: var(--font-heading);
+    font-size: 1.02rem;
+    font-weight: 600;
+    color: var(--color-primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+}
+.faq-question i {
+    color: var(--color-accent);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+.faq-item.active .faq-question i {
+    transform: rotate(180deg);
+}
+.faq-answer {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease, padding 0.3s ease;
+    padding: 0 1.5rem;
+    color: var(--color-text-light);
+    font-size: 0.95rem;
+    line-height: 1.65;
+}
+.faq-item.active .faq-answer {
+    max-height: 320px;
+    padding: 0 1.5rem 1.25rem 1.5rem;
+}
+
+/* Compact Mobile Overrides for iOS & Android */
+@media (max-width: 768px) {
+    .top-bar {
+        padding: 0.4rem 0;
+        font-size: 0.78rem;
+    }
+    .top-bar-content {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        flex-wrap: nowrap;
+        gap: 0.5rem;
+    }
+    .top-bar-left {
+        display: none; /* Liberamos alto de pantalla en móviles */
+    }
+    .top-bar-right {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        width: 100%;
+        gap: 0.5rem;
+    }
+    .top-bar-email-link {
+        display: none !important; /* En móvil priorizamos Llamada Directa + WhatsApp */
+    }
+    .hero-cta-group {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .hero-cta-group .btn {
+        width: 100%;
+    }
+    .leadership-card {
+        grid-template-columns: 1fr;
+        padding: 1.75rem;
+        gap: 1.5rem;
+    }
+    .leadership-guarantees {
+        grid-template-columns: 1fr;
+    }
+    .features-grid {
+        grid-template-columns: 1fr !important;
+    }
+    input, select, textarea {
+        font-size: 16px !important; /* Evita auto-zoom en iPhone iOS */
+    }
+}
+
 
