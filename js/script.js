@@ -303,6 +303,8 @@ document.addEventListener('DOMContentLoaded', () => {
     // 10. Smart Quote Calculator Logic + URL Pre-fill + Direct WhatsApp Quote
     const serviceSelect = document.getElementById('instalacion');
     const surfaceInput = document.getElementById('superficie');
+    const surfaceRangeSelect = document.getElementById('rango-superficie');
+    const manualContainer = document.getElementById('contenedor-superficie-manual');
     const empresaInput = document.getElementById('empresa');
     const calcPlaceholder = document.getElementById('calc-placeholder');
     const calcResults = document.getElementById('calc-results');
@@ -325,9 +327,21 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     const updateCalculator = () => {
-        if (!serviceSelect || !surfaceInput) return;
+        if (!serviceSelect) return;
         const service = serviceSelect.value;
-        const surface = parseFloat(surfaceInput.value);
+        let surface = 0;
+
+        if (surfaceRangeSelect) {
+            const rangeVal = surfaceRangeSelect.value;
+            if (rangeVal === 'manual') {
+                surface = parseFloat(surfaceInput ? surfaceInput.value : 0);
+            } else if (rangeVal) {
+                surface = parseFloat(rangeVal);
+                if (surfaceInput) surfaceInput.value = rangeVal;
+            }
+        } else if (surfaceInput) {
+            surface = parseFloat(surfaceInput.value);
+        }
 
         if (!service || !surface || isNaN(surface) || surface <= 0) {
             if (calcResults) calcResults.style.display = 'none';
@@ -397,6 +411,27 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
+    // Manejador del selector desplegable de rangos de m²
+    if (surfaceRangeSelect) {
+        surfaceRangeSelect.addEventListener('change', () => {
+            if (surfaceRangeSelect.value === 'manual') {
+                if (manualContainer) manualContainer.style.display = 'block';
+                if (surfaceInput) {
+                    surfaceInput.required = true;
+                    surfaceInput.value = '';
+                    surfaceInput.focus();
+                }
+            } else {
+                if (manualContainer) manualContainer.style.display = 'none';
+                if (surfaceInput) {
+                    surfaceInput.required = false;
+                    surfaceInput.value = surfaceRangeSelect.value;
+                }
+            }
+            updateCalculator();
+        });
+    }
+
     // URL Parameter Pre-fill for Cotización
     const urlParams = new URLSearchParams(window.location.search);
     const servicioParam = urlParams.get('servicio');
@@ -417,12 +452,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    if (serviceSelect && surfaceInput) {
+    if (serviceSelect) {
         serviceSelect.addEventListener('change', updateCalculator);
+    }
+    if (surfaceInput) {
         surfaceInput.addEventListener('input', updateCalculator);
-        if (empresaInput) {
-            empresaInput.addEventListener('input', updateCalculator);
-        }
+    }
+    if (empresaInput) {
+        empresaInput.addEventListener('input', updateCalculator);
     }
 
     // 11. FAQ Accordion Logic
